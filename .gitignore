@@ -1,0 +1,7 @@
+bin/debug_showstates.exe
+bin/lattice_states.exe
+example_states.tsv
+eigenstates.tsv
+obj/lattice_states.o
+obj/generate_states.o
+obj/debug_showstates.o
