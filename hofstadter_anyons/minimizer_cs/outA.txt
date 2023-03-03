@@ -1,0 +1,31 @@
+----------------------------------------------
+Demonstrating Quasi newton minimization method
+----------------------------------------------
+Demonstration one, find max of f(x)=exp(-(x-2)^2) (true solution x=2
+Starting at x0 = (0.0) with precision 10^-5. Now Running ...
+
+In 16 steps: Got predicted max at x=|    2.00000 |
+PASS this is within 10^-5 of 2.0
+----------------------------------------------
+Demonstration Rosenbrock, find minimum of f(x,y)=((1-x)^2+100*(y-x^2)^2) (minimum is at 1,1)
+Starting at x0 = (-1,2) with precision 10^-5. Now Running ...
+
+                     |    1.00000 |
+Got predicted root x=|    0.99999 |
+
+In 57 steps: Has f(x)=2.01896203435317E-11
+
+PASS this is within 10^-5 of (1,1)
+----------------------------------------------
+Demonstration Himmelblau, find minimum of f(x,y)=(x^2+y-11)^2+(x+y^2-7)^2
+minima at: (3.0,2.0),(-2.805118, 3.131312),(-3.779310, -3.283186) and (3.584428, -1.848126)
+Starting at x0 = (0,0) with precision 10^-5. Now Running ...
+
+                     |    3.00000 |
+Got predicted root x=|    2.00000 |
+
+In 9 steps: Has f(x)=2.44855361437685E-14
+
+PASS the function is within 10^-5 of 0, here; which is the known minimum
+----------------------------------------------
+ALL TESTS PASSED

@@ -1,0 +1,19 @@
+6x6 Lattice with 3 particles for 36 sites
+Generating and printing ALL legal states to stderr
+Found 7140 states with 3 particles
+And 630 states with 2 particles
+Getting empty ground state
+Has phi 0.24
+Getting ground state with potential and 1 fewer particles
+Has phi 0.24
+Density at each site:
+ |	0	1	2	3	4	5	
+0|	0.006	0.035	0.032	0.017	0.015	0.003	
+1|	0.035	0.147	0.090	-0.001	0.021	0.015	
+2|	0.032	0.090	0.006	-0.059	-0.001	0.017	
+3|	0.017	-0.001	-0.059	0.006	0.090	0.032	
+4|	0.015	0.021	-0.001	0.090	0.147	0.035	
+5|	0.003	0.015	0.017	0.032	0.035	0.006	
+sum density 0 = 3.000
+sum density 1 = 2.000
+sum charge = 1.000

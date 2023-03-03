@@ -1,0 +1,23 @@
+6x6 Lattice with 3 particles for 36 sites
+Generating and printing ALL legal states to stderr
+Found 7140 states
+
+
+ Now creating hermitian hamiltonian (7140 by  7140)
+Has φ=0.24
+
+ Now diagonalizing hamiltonian...
+
+ ... Done, here are the 3 lowest energies and eigenvectors
+E_0=-8.09624
+Total particle density is 3
+All test PASSED, is valid eigenstate and eigenvalue
+
+E_1=-7.97756
+Total particle density is 3
+All test PASSED, is valid eigenstate and eigenvalue
+
+E_2=-7.93247
+Total particle density is 3
+All test PASSED, is valid eigenstate and eigenvalue
+

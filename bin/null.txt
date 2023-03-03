@@ -1,1 +1,0 @@
-git does not like empty folders, and as such this folder is not empty

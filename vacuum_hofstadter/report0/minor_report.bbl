@@ -1,0 +1,131 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Nielsen2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8a09f0350917a0047707caa581c15c23}{%
+           family={Srivatsa},
+           familyi={S\bibinitperiod},
+           given={N.\bibnamedelimi S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4056cf766d3db22065063994971b9a00}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xikun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=0ddfdaecdd142c7076ffe2d1092084b0}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Anne\bibnamedelimb E.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{243a28f3a9dd1939d26518985479df49}
+      \strng{fullhash}{243a28f3a9dd1939d26518985479df49}
+      \strng{bibnamehash}{243a28f3a9dd1939d26518985479df49}
+      \strng{authorbibnamehash}{243a28f3a9dd1939d26518985479df49}
+      \strng{authornamehash}{243a28f3a9dd1939d26518985479df49}
+      \strng{authorfullhash}{243a28f3a9dd1939d26518985479df49}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{3}
+      \field{journaltitle}{Phys. Rev. Research}
+      \field{month}{7}
+      \field{title}{Squeezing anyons for braiding on small lattices}
+      \field{volume}{3}
+      \field{year}{2021}
+      \field{pages}{033044}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevResearch.3.033044
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.3.033044
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.3.033044
+      \endverb
+    \endentry
+    \entry{code}{online}{}
+      \name{author}{1}{}{%
+        {{hash=dff8f8ba3eec1904db4ab886a9ebbae6}{%
+           family={Christensen},
+           familyi={C\bibinitperiod},
+           given={Nikolaj\bibnamedelima Roager},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \strng{fullhash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \strng{bibnamehash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \strng{authorbibnamehash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \strng{authornamehash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \strng{authorfullhash}{dff8f8ba3eec1904db4ab886a9ebbae6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Code for this project}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/nikolajRoager/lattice2D
+      \endverb
+      \verb{url}
+      \verb https://github.com/nikolajRoager/lattice2D
+      \endverb
+    \endentry
+    \entry{arma}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7694831f2c05781ca902be846d977d32}{%
+           family={Sanderson},
+           familyi={S\bibinitperiod},
+           given={Conrad},
+           giveni={C\bibinitperiod}}}%
+        {{hash=8eb536389873f08163c1c3c34f4c6c6c}{%
+           family={Curtin},
+           familyi={C\bibinitperiod},
+           given={Ryan\bibnamedelima R.},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2063965f993154119d5ffa05e30828fb}
+      \strng{fullhash}{2063965f993154119d5ffa05e30828fb}
+      \strng{bibnamehash}{2063965f993154119d5ffa05e30828fb}
+      \strng{authorbibnamehash}{2063965f993154119d5ffa05e30828fb}
+      \strng{authornamehash}{2063965f993154119d5ffa05e30828fb}
+      \strng{authorfullhash}{2063965f993154119d5ffa05e30828fb}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Open Source Softw.}
+      \field{title}{Armadillo: a template-based C++ library for linear algebra}
+      \field{volume}{1}
+      \field{year}{2016}
+      \field{pages}{26}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

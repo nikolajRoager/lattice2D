@@ -1,0 +1,33 @@
+set terminal png
+set output 'rosenbrock.png'
+set xlabel 'x'
+set ylabel 'y'
+set zlabel 'f(x,y)'
+set key below
+set title 'Rosenbrock valley function'
+
+set style line 1 \
+    linecolor rgb '#0060ad' \
+    linetype 1 linewidth 2 \
+    pointtype 7 pointsize 1
+
+
+splot [-2:2] [-1:4] ((1-x)**2+100*(y-x**2)**2) notitle,\
+'rosenbrock.tsv' index 0 using 1:2:3 with lp title 'Quasi newton method' linestyle 1
+
+set output 'himmelblau.png'
+set xlabel 'x'
+set ylabel 'y'
+set zlabel 'f(x,y)'
+set key below
+set title 'Himmelblau function'
+
+set style line 1 \
+    linecolor rgb '#0060ad' \
+    linetype 1 linewidth 2 \
+    pointtype 7 pointsize 1
+
+
+splot [-4:4] [-4:4] (x**2+y-11)**2+(x+y**2-7)**2 notitle,\
+'himmelblau.tsv' index 0 using 1:2:3 with lp title 'Quasi newton method' linestyle 1
+

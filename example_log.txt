@@ -1,3 +1,0 @@
-4x6 Lattice with 8 particles for 24 sites
-Generating and printing ALL legal states to stderr
-Found 735471 states
