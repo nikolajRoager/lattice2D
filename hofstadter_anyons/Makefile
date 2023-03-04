@@ -12,8 +12,23 @@ CXXFLAGS=-Wall -I$(IDIR)
 
 LIBS = -std=c++17 -O2 -larmadillo -O2
 
-#First test to see if this works
-default:  densities.pdf
+default:  densities.pdf test_log.txt
+
+
+test_log.txt: $(OUTDIR)/test_minimize.exe
+;$(OUTDIR)/test_minimize.exe  > test_log.txt
+
+$(OUTDIR)/test_minimize.exe: $(ODIR)/test_minimize.o $(ODIR)/minimize.o
+;$(CC) -o $@ $^ $(CXXFLAGS) $(LIBS)
+
+$(ODIR)/test_minimize.o: $(SRCDIR)/test_minimize.cpp $(IDIR)/minimize.hpp
+;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
+
+
+$(ODIR)/minimize.o: $(SRCDIR)/minimize.cpp $(IDIR)/minimize.hpp
+;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
+
+
 
 
 densities.pdf : densities.tsv
