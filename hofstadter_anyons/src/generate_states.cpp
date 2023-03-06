@@ -286,7 +286,7 @@ void print_superpositions_data(const vector<state_t>& states,vector<double> supe
 }
 
 //Get the density at all sites, I prefer to get this data as a matrix
-mat get_density(const vector<state_t>& states,vector<double> superpositions , uint64_t& n_states,  int w, int h)//Assumes little Endian states
+mat get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h)//Assumes little Endian states
 {
     mat Out(w,h);//Starts as 0
 

@@ -36,5 +36,5 @@ void generate(vector<state_t>& states,
 
 
 //Get the density at all sites, I prefer to get this data as a matrix
-mat get_density(const vector<state_t>& states,vector<double> superpositions , uint64_t& n_states,  int w, int h);
+mat get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h);
 

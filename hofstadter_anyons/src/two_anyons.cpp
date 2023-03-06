@@ -134,54 +134,100 @@ int main(int argc, char* argv[])
     empty_eigval,
     empty_eigvec);
 
-    //Print this state density to a table, which gnuplot can plot
+    //To calculate the density of particles in the lattice, we need the probability of being in each basis state
     vector<double> prop0_list(N_states0);
     for (uint64_t j = 0; j < N_states0; ++j)
     {
         prop0_list[j]= norm(empty_eigvec[j]);
     }
 
-    print_superpositions_data(states0,prop0_list , N_states0,  nw, nh);
+    mat lattice_dens0= get_density(states0,prop0_list, N_states0, nw, nh);
+    print_density_data(lattice_dens0,  nw, nh);//Ok now print it so gnuplot can plot it
     cerr << endl;
 
 
     //Now add in two anyons, removing one particle (so keeping phi the same) and adding a potential
 
+    //But first. Set up all the variables we would like to save, and need to use
 
+    //Traping potentials AND auxillary potential on all other sites put together
     vec V(N_sites);
 
-    V[x0+y0*nw]=1;
-    V[x1+y1*nw]=1;
-    cout <<"Getting ground state with potential and 1 fewer particles"<<endl;
+    //Find the indices of the sites where we want the anyons
+    size_t n0 = std::min(x0+y0*nw,x1+y1*nw);
+    size_t n1 = std::max(x0+y0*nw,x1+y1*nw);
+    V[n0]=1;
+    V[n1]=1;
 
-    get_state(
-    N_states1,
-    N_sites,
-    N_particles-1,
-    2,//N_anyons,
-    nw,
-    nh,
-    states1,
-    empty_eigval,
-    empty_eigvec,
-    V);
+    mat lattice_dens1;//Will be written to, if we want to plot the actual density
 
-    //Get the propability of finding the system in either basis state, this is one step before finding the expected number of particles in each site
+    //This is what we really want, two perfectly localized anyons
+    mat q_optimum=mat(nw,nh);
+    q_optimum(x0,y0)=0.5;
+    q_optimum(x1,y1)=0.5;
 
-    vector<double> prop1_list(N_states1);
-    //I strictly don't need to use uint64 here, but the compiler just gets real mad if I use different types
-    for (uint64_t j = 0; j < N_states1; ++j)
+
+    //Tje actual density difference we found
+    mat q(nw,nh);
+
+    //I will use a lambda function, to make getting the fitness, densities and charge difference easier
+    auto get_fitness =[&lattice_dens0,&lattice_dens1 ,&q_optimum,&q,&states1,N_states1,N_sites,N_particles,nw,nh](vec V) -> double
     {
-        prop1_list[j]= norm(empty_eigvec[j]);
-       // prop2_list[j]= prop0_list[j]-prop1_list[j];
-    }
 
-    print_superpositions_data(states1,prop1_list , N_states1,  nw, nh);
+        double a2_eigval;
+        cx_vec a2_eigvec;
+
+        get_state(
+            N_states1,
+            N_sites,
+            N_particles-1,
+            2,//N_anyons,
+            nw,
+            nh,
+            states1,
+            a2_eigval,
+            a2_eigvec,
+            V
+        );
+        //Get the propability of finding the system in either basis state, this is one step before finding the expected number of particles in each site
+
+        vector<double> prop1_list(N_states1);
+        //I strictly don't need to use uint64 here, but the compiler just gets real mad if I use different types
+        for (uint64_t j = 0; j < N_states1; ++j)
+        {
+            prop1_list[j]= norm(a2_eigvec[j]);
+        }
+
+        lattice_dens1 = get_density(states1,prop1_list, N_states1, nw, nh);
+
+        //
+        q=mat(nw,nh);
+        double fitness=0;
+        for (uint64_t y = 0; y<nw; ++y)
+        {
+            for (uint64_t x = 0; x<nw; ++x)
+            {
+                double n0 =lattice_dens0(x,y);
+                double n1 =lattice_dens1(x,y);
+                q(x,y)=n0-n1;
+                fitness += std::abs((n0-n1)-q_optimum(x,y));
+
+            }
+        }
+
+        return fitness;
+    };
+
+
+    cout <<"Getting ground state with unoptimized potential and 1 fewer particles"<<endl;
+
+
+    double fitness_unoptimized = get_fitness (V);
+
+    print_density_data(lattice_dens1,  nw, nh);
     cerr << endl;
 
-    //mat lattice_charge = get_density(states,prop2_list, N_states, nw, nh);
-    mat lattice_dens0= get_density(states0,prop0_list, N_states0, nw, nh);
-    mat lattice_dens1 = get_density(states1,prop1_list, N_states1, nw, nh);
+
 
 
     std::cout << std::fixed;
@@ -195,19 +241,11 @@ int main(int argc, char* argv[])
         cout<<x<<"\t";
     cout<<'\n';
 
-    mat q(nw,nh);
     for (uint64_t y = 0; y<nw; ++y)
     {
         cout<<y<<"|\t";
         for (uint64_t x = 0; x<nw; ++x)
         {
-            double n0 =lattice_dens0(x,y);
-            double n1 =lattice_dens1(x,y);
-            sum0 += n0;
-            sum1 += n1;
-            q(x,y)=n0-n1;
-            sum2 += q(x,y);
-
             cout<<q(x,y)<<"\t";
         }
         cout<<'\n';
@@ -222,5 +260,8 @@ int main(int argc, char* argv[])
     cout<<"sum density 0 = "<<sum0<<endl;
     cout<<"sum density 1 = "<<sum1<<endl;
     cout<<"sum charge = "<<sum2<<endl;
+
+    cout<<"Fitness with unoptimized potential "<<fitness_unoptimized<<endl;
+
     return 0;
 }
