@@ -1,0 +1,20 @@
+6x6 Lattice with 3 particles for 36 sites
+Found 7140 states with 3 particles
+And 630 states with 2 particles
+Getting empty ground state
+Has phi 0.24
+Could not open file with potentials
+Getting ground state with unoptimized potential and 1 fewer particles
+Has phi 0.24
+Density at each site:
+ |	0	1	2	3	4	5	
+0|	0.005	0.028	0.031	0.031	0.028	0.005	
+1|	0.028	0.086	0.043	0.043	0.086	0.028	
+2|	0.031	0.043	-0.043	-0.043	0.043	0.031	
+3|	0.031	0.043	-0.043	-0.043	0.043	0.031	
+4|	0.028	0.086	0.043	0.043	0.086	0.028	
+5|	0.005	0.028	0.031	0.031	0.028	0.005	
+sum density 0 = 0.000
+sum density 1 = 0.000
+sum charge = 0.000
+Fitness with unoptimized potential 2.165
