@@ -13,9 +13,6 @@ set palette defined (-0.5 'cyan', -0.25 'blue', 0 'black', 0.25 'red', 0.5 'yell
 set ytics ("5" 0,"4" 1,"3" 2,"2" 3,"1" 4,"0" 5)
 set xtics ("5" 5,"4" 4,"3" 3,"2" 2,"1" 1,"0" 0)
 
-splot 'q0.tsv' matrix nonuniform index 0 with pm3d notitle
-splot 'q1.tsv' matrix nonuniform index 0 with pm3d notitle
-splot 'q2.tsv' matrix nonuniform index 0 with pm3d notitle
-splot 'q3.tsv' matrix nonuniform index 0 with pm3d notitle
-splot 'q4.tsv' matrix nonuniform index 0 with pm3d notitle
-splot 'q5.tsv' matrix nonuniform index 0 with pm3d notitle
+splot 'q.tsv' matrix nonuniform index 0 with pm3d title "Non-optimzed, error: 1.94"
+splot 'q3.tsv' matrix nonuniform index 0 with pm3d title "Human optimized, error: 1.73"
+splot 'q.tsv' matrix nonuniform index 1 with pm3d title "Computer optimized, error: 1.69"

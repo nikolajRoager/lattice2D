@@ -15,6 +15,7 @@
 
 //The actual math library
 #include <armadillo>
+#include"minimize.hpp"
 
 using namespace std; //Namespace containing in and out stream, std::vector (dynamically sized list) and complex numbers
 using namespace arma;//Namespace containing matrices and vectors (actual vectors)
@@ -233,16 +234,23 @@ int main(int argc, char* argv[])
 
     double fitness = get_fitness (V);
 
-
-
-    double sum0 = 0;
-    double sum1 = 0;
-    double sum2 = 0;
-
     print_density_data(q , nw, nh);
     cerr << endl;
 
-    cout<<"Fitness with potential "<<argv[7]<<" : "<<fitness<<endl;
+    cout<<"Fitness with unoptimized potential "<<argv[7]<<" : "<<fitness<<endl;
+
+
+    size_t steps;
+    cout<<std::setprecision(16);
+    vec V_optimized = qnewton(get_fitness,V,steps,1e-5,true);
+
+    cout<<"Got optimized potential in "<<steps<<" with "<<get_fitness(V_optimized)<<endl;
+
+    //q is written two as soon as we call get_fitness
+    print_density_data(q , nw, nh);
+    cerr << endl;
+
+
 
     return 0;
 }
