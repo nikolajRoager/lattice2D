@@ -212,7 +212,7 @@ void generate(vector<state_t>& states,
     generate_recursive(states,0,N,N_sites,N_particles);
 }
 
-void print_density_data(mat lattice_density,  int w, int h)//Assumes little Endian states
+void print_density_data(vec lattice_density,  int w, int h)//Assumes little Endian states
 {
     int N_sites = w*h;
 
@@ -232,8 +232,9 @@ void print_density_data(mat lattice_density,  int w, int h)//Assumes little Endi
             cerr<<(y+j-0.5);
             for (int x = 0 ; x < w; ++x)
             {
+
                 int i=x+(h-y-1)*w;//Plot in reverse order, for gnuplot to plot it the way I want
-                cerr<<' '<<lattice_density(x,h-y-1)<<' '<<lattice_density(x,h-y-1);
+                cerr<<' '<<lattice_density(i)<<' '<<lattice_density(i);
 
             }
             cerr<<endl;
@@ -285,12 +286,14 @@ void print_superpositions_data(const vector<state_t>& states,vector<double> supe
     }
 }
 
-//Get the density at all sites, I prefer to get this data as a matrix
-mat get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h)//Assumes little Endian states
-{
-    mat Out(w,h);//Starts as 0
 
-    int i=0;//Running index, start at 0
+//Get the density at all sites, I prefer to get this data as a matrix
+vec get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h)//Assumes little Endian states
+{
+    vec Out(w*h);//Starts as 0
+
+    //This time I try the approach of using a running index, arguably *moderately* better
+    int i=0;
     for (int y = 0 ; y < h; ++y)
     {
         for (int x = 0 ; x < w; ++x)
@@ -299,10 +302,9 @@ mat get_density(const vector<state_t>& states,vector<double> superpositions , co
             for (int k = 0; k < n_states; ++k)
             {
                 if( (states[k] >> (i+x)) & ((state_t)1))
-                    Out(x,y)+=superpositions[k];
+                    Out(i+x)+=superpositions[k];
             }
         }
-
         i+=w;
     }
 

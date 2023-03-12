@@ -25,7 +25,7 @@ void print_state_data(state_t S,  int w, int h);//Assumes little Endian states
 //Print this state in a format gnuplot can plot
 void print_superpositions_data(const vector<state_t>& states,vector<double> superpositions , uint64_t& n_states,  int w, int h);//Assumes little Endian states
 
-void print_density_data(mat lattice_density,  int w, int h);//Assumes little Endian states
+void print_density_data(vec lattice_density,  int w, int h);//Assumes little Endian states
 
 //Generate all states and stores them here, assumes that size has been allocated correctly
 void generate(vector<state_t>& states,
@@ -35,6 +35,6 @@ void generate(vector<state_t>& states,
 
 
 
-//Get the density at all sites, I prefer to get this data as a matrix
-mat get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h);
+//Get the density at all sites,
+vec get_density(const vector<state_t>& states,vector<double> superpositions , const uint64_t& n_states,  int w, int h);
 

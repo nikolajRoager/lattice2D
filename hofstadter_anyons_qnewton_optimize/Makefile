@@ -10,7 +10,7 @@ OUTDIR=bin
 
 CXXFLAGS=-Wall -I$(IDIR)
 
-LIBS = -std=c++17 -O2 -larmadillo -O2 -lncurses
+LIBS = -std=c++17 -O2 -larmadillo -O2 -lncurses -lalglib -pthread
 
 default:  q.pdf log.txt
 ;cat log.txt
@@ -25,7 +25,7 @@ q.pdf : q.tsv
 
 
 log.txt q.tsv: $(OUTDIR)/two_anyons.exe Makefile V0.tsv
-;$(OUTDIR)/two_anyons.exe 6 6 1 1 5 5 V0.tsv 1> log.txt 2>  q.tsv
+;$(OUTDIR)/two_anyons.exe 6 6 anyon_location.tsv V0.tsv #1>// log.txt 2>  q.tsv
 
 
 $(OUTDIR)/two_anyons.exe: $(ODIR)/two_anyons.o $(ODIR)/get_state.o $(ODIR)/generate_states.o $(ODIR)/approx.o $(ODIR)/minimize.o
@@ -43,7 +43,15 @@ $(ODIR)/get_state.o: $(SRCDIR)/get_state.cpp $(IDIR)/get_state.hpp  $(IDIR)/appr
 $(ODIR)/approx.o: $(SRCDIR)/approx.cpp $(IDIR)/approx.hpp
 ;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
 
+test_log.txt: $(OUTDIR)/test_minimize.exe
+;$(OUTDIR)/test_minimize.exe -v > test_log.txt
 
+$(OUTDIR)/test_minimize.exe: $(ODIR)/test_minimize.o $(ODIR)/minimize.o
+;$(CC) -o $@ $^ $(CXXFLAGS) $(LIBS)
+
+
+$(ODIR)/test_minimize.o: $(SRCDIR)/test_minimize.cpp $(IDIR)/minimize.hpp
+;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
 .PHONY: clean
 
 clean:

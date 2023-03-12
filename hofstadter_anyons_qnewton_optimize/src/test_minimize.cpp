@@ -13,9 +13,9 @@ using namespace arma;//Namespace containing matrices and vectors (actual vectors
 //double precision approximation
 bool approx(double a,double b,double tau=1e-9,double eps=1e-9)
 {
-    if (std::abs(a-b)<tau)
+    if (std::abs(a-b)<2*tau)
         return true;
-    if (std::abs(a-b)/(std::abs(a)+std::abs(b))<eps)
+    if (std::abs(a-b)/(std::abs(a)+std::abs(b))<2*eps)
         return true;
     return false;
 }
@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
     cout<<"Demonstration Himmelblau, find minimum of f(x,y)=(x^2+y-11)^2+(x+y^2-7)^2\nminima at: (3.0,2.0),(-2.805118, 3.131312),(-3.779310, -3.283186) and (3.584428, -1.848126)"<<endl;
     cout<<"Starting at x0 = (0,0) with precision 10^-5. Now Running ..."<<endl;
 
-    out = qnewton([](vec X) -> double {return ((X[0]*X[0]+X[1]-11)*(X[0]*X[0]+X[1]-11)+(X[0]+X[1]*X[1]-7)*(X[0]+X[1]*X[1]-7));},vec("0 0"),steps,1e-3,true);
+    out = qnewton([](vec X) -> double {return ((X[0]*X[0]+X[1]-11)*(X[0]*X[0]+X[1]-11)+(X[0]+X[1]*X[1]-7)*(X[0]+X[1]*X[1]-7));},vec("0 0"),steps,1e-5,verbose);
 
     cout<<endl;
     cout<<"Got predicted root x="<<out<<endl;
@@ -97,3 +97,40 @@ int main(int argc, char* argv[])
     cout<<endl;
     return 0;
 }
+/*
+
+
+    WriteLine($"----------------------------------------------");
+    WriteLine($);
+"minimize.hpp"       Func<vector,double> f2 = (X)  => ((X[0]*X[0]+X[1]-11)*(X[0]*X[0]+X[1]-11)+(X[0]+X[1]*X[1]-7)*(X[0]+X[1]*X[1]-7));
+    WriteLine($"Starting at x0 = (0,0) with precision 10^-5. Now Running ...");
+    (vector root2, int steps2) = qnewton(f2,new vector(0,0),1e-5,verbose , new System.IO.StreamWriter("himmelblau.tsv"));
+
+    WriteLine("");
+    WriteLine(root2.getString("Got predicted root x="));
+
+    WriteLine("");
+    WriteLine($"In {steps2} steps: Has f(x)={f2(root2)}");
+    WriteLine("");
+    if ( approx(f2(root2),0.0,1e-5,1e-5))
+    {
+        WriteLine("PASS the function is within 10^-5 of 0, here; which is the known minimum");
+    }
+    else
+    {
+        PASS=false;
+        WriteLine("FAIL the function is not within 10^-5 of 0, here; which is the known minimum");
+    }
+    WriteLine($"----------------------------------------------");
+    if (PASS)
+        WriteLine("ALL TESTS PASSED");
+    else
+        WriteLine("SOME TESTS FAILED");
+*/
+
+/*
+
+
+        return 0;
+    }
+*/

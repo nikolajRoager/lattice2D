@@ -1,0 +1,129 @@
+----------------------------------------------
+Demonstrating Quasi newton minimization method
+----------------------------------------------
+Demonstration one, find max of f(x)=exp(-(x-2)^2) (true solution x=2)
+Starting at x0 = (0.0) with precision 10^-5. Now Running ...
+Start f(x)=-0.0183156
+Step 0	 f(x)=-0.0244209 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 1	 f(x)=-0.0244209 Function calls: 33
+Step 2	 f(x)=-0.0350348 Function calls: 2
+RESET B AS LINESEARCH FAILED
+Step 3	 f(x)=-0.0350348 Function calls: 33
+Step 4	 f(x)=-0.0556999 Function calls: 2
+RESET B AS LINESEARCH FAILED
+Step 5	 f(x)=-0.0556999 Function calls: 33
+Step 6	 f(x)=-0.103572 Function calls: 2
+RESET B AS LINESEARCH FAILED
+Step 7	 f(x)=-0.103572 Function calls: 33
+Step 8	 f(x)=-0.243312 Function calls: 2
+RESET B AS LINESEARCH FAILED
+Step 9	 f(x)=-0.243312 Function calls: 33
+Step 10	 f(x)=-0.69556 Function calls: 2
+RESET B AS LINESEARCH FAILED
+Step 11	 f(x)=-0.69556 Function calls: 33
+Step 12	 f(x)=-0.937545 Function calls: 2
+Step 13	 f(x)=-0.997291 Function calls: 2
+Step 14	 f(x)=-0.999993 Function calls: 2
+Step 15	 f(x)=-1 Function calls: 2
+BREAK DUE TO: gradient reached target
+Finished in 220 calls
+ Got root 2 in 16steps 
+PASS this is within 10^-5 of 2.0
+----------------------------------------------
+Demonstration Rosenbrock, find minimum of f(x,y)=((1-x)^2+100*(y-x^2)^2) (minimum is at 1,1)
+Starting at x0 = (-1,2) with precision 10^-5. Now Running ...
+Start f(x)=104
+Step 0	 f(x)=7.09595 Function calls: 15
+Step 1	 f(x)=3.56732 Function calls: 6
+Step 2	 f(x)=3.54311 Function calls: 3
+Step 3	 f(x)=3.36958 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 4	 f(x)=3.36958 Function calls: 34
+Step 5	 f(x)=3.27174 Function calls: 12
+Step 6	 f(x)=2.66115 Function calls: 5
+Step 7	 f(x)=2.56676 Function calls: 3
+Step 8	 f(x)=2.45008 Function calls: 3
+Step 9	 f(x)=2.21376 Function calls: 4
+Step 10	 f(x)=2.01807 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 11	 f(x)=2.01807 Function calls: 34
+Step 12	 f(x)=1.91648 Function calls: 11
+Step 13	 f(x)=1.51747 Function calls: 6
+Step 14	 f(x)=1.41965 Function calls: 3
+Step 15	 f(x)=1.39483 Function calls: 3
+Step 16	 f(x)=1.18048 Function calls: 4
+Step 17	 f(x)=1.05195 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 18	 f(x)=1.05195 Function calls: 34
+Step 19	 f(x)=0.998818 Function calls: 10
+Step 20	 f(x)=0.942862 Function calls: 6
+Step 21	 f(x)=0.823959 Function calls: 3
+Step 22	 f(x)=0.700696 Function calls: 3
+Step 23	 f(x)=0.598388 Function calls: 6
+Step 24	 f(x)=0.544668 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 25	 f(x)=0.544668 Function calls: 34
+Step 26	 f(x)=0.493717 Function calls: 11
+Step 27	 f(x)=0.356756 Function calls: 6
+Step 28	 f(x)=0.314603 Function calls: 3
+Step 29	 f(x)=0.290824 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 30	 f(x)=0.290824 Function calls: 34
+Step 31	 f(x)=0.265626 Function calls: 11
+Step 32	 f(x)=0.153665 Function calls: 5
+Step 33	 f(x)=0.141584 Function calls: 5
+Step 34	 f(x)=0.124476 Function calls: 3
+Step 35	 f(x)=0.067316 Function calls: 3
+Step 36	 f(x)=0.0389995 Function calls: 3
+Step 37	 f(x)=0.0369039 Function calls: 4
+Step 38	 f(x)=0.0190859 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 39	 f(x)=0.0190859 Function calls: 34
+Step 40	 f(x)=0.018689 Function calls: 12
+Step 41	 f(x)=0.00702374 Function calls: 3
+Step 42	 f(x)=0.0063887 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 43	 f(x)=0.0063887 Function calls: 34
+Step 44	 f(x)=0.00570738 Function calls: 12
+Step 45	 f(x)=0.00162327 Function calls: 3
+Step 46	 f(x)=0.000361807 Function calls: 4
+Step 47	 f(x)=3.65409e-05 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 48	 f(x)=3.65409e-05 Function calls: 34
+Step 49	 f(x)=3.64778e-05 Function calls: 12
+Step 50	 f(x)=1.30155e-05 Function calls: 3
+Step 51	 f(x)=4.67217e-08 Function calls: 3
+RESET B AS LINESEARCH FAILED
+Step 52	 f(x)=4.67217e-08 Function calls: 34
+Step 53	 f(x)=4.28516e-08 Function calls: 12
+Step 54	 f(x)=2.69649e-10 Function calls: 3
+BREAK DUE TO: gradient reached target
+Finished in 558 calls
+
+Got predicted root x=   1.0000
+   1.0000
+
+
+PASS this is within 10^-5 of (1,1)
+----------------------------------------------
+Demonstration Himmelblau, find minimum of f(x,y)=(x^2+y-11)^2+(x+y^2-7)^2
+minima at: (3.0,2.0),(-2.805118, 3.131312),(-3.779310, -3.283186) and (3.584428, -1.848126)
+Starting at x0 = (0,0) with precision 10^-5. Now Running ...
+Start f(x)=170
+Step 0	 f(x)=32.2578 Function calls: 8
+Step 1	 f(x)=27.096 Function calls: 8
+Step 2	 f(x)=8.83907 Function calls: 4
+Step 3	 f(x)=1.40832 Function calls: 3
+Step 4	 f(x)=0.340519 Function calls: 3
+Step 5	 f(x)=0.0102047 Function calls: 3
+Step 6	 f(x)=0.000336511 Function calls: 3
+Step 7	 f(x)=1.12882e-06 Function calls: 3
+Step 8	 f(x)=2.26298e-10 Function calls: 3
+BREAK DUE TO: gradient reached target
+Finished in 39 calls
+
+Got predicted root x=   3.0000
+   2.0000
+
+

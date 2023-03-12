@@ -15,6 +15,7 @@
 
 //The actual math library
 #include <armadillo>
+#include <chrono>
 #include"minimize.hpp"
 
 using namespace std; //Namespace containing in and out stream, std::vector (dynamically sized list) and complex numbers
@@ -26,9 +27,9 @@ using namespace arma;//Namespace containing matrices and vectors (actual vectors
 int main(int argc, char* argv[])
 {
     //Read arguments
-    if (argc!=8)
+    if (argc!=5)
     {
-        cout<<"Invalid, argument, need "<<argv[0]<<" width height x0 y0 x1 y1 potential_file"<<endl;
+        cout<<"Invalid, argument, need "<<argv[0]<<" width height anyon_location_file potential_file"<<endl;
         return 1;
     }
 
@@ -38,13 +39,8 @@ int main(int argc, char* argv[])
 
     int N_sites = nh*nw;
 
-    int x0 = atoi(argv[3]);
-    int y0 = atoi(argv[4]);
-    int x1 = atoi(argv[5]);
-    int y1 = atoi(argv[6]);
 
-
-    uint64_t N_particles = 3;
+    uint64_t N_particles = 4;
 
     if (nw==0)
     {
@@ -76,31 +72,33 @@ int main(int argc, char* argv[])
     }
 
 
+    vector<uint64_t> anyon_sites(N_sites);//The sites containing 0: no anyons, 1: first anyon 2: second anyon
 
+    ifstream anyon_file(argv[3]);
 
-
-    if (x0 >= nw)
+    if (!anyon_file.is_open())
     {
-        cout<<"anyon x location "<< x0<<" outside lattice, bust be from 0 to "<<(nw-1)<<endl;
+        cout<<"Could not open "<<argv[3]<<endl;
         return 1;
     }
 
-    if (y0 >= nw)
+    for (uint64_t i = 0; i < N_sites; ++i)
     {
-        cout<<"anyon x location "<< x0<<" outside lattice, bust be from 0 to "<<(nw-1)<<endl;
-        return 1;
+        uint64_t I =0;
+        if (! (anyon_file>>I))
+        {
+            cout<<argv[3]<<" did not match number of sites (site "<<i<<" could not be read)" <<endl;
+            return 1;
+        }
+
+        if (I>2)
+            cout<<"Site "<<i<<" could not be read in "<<argv[3]<<" is outside range, should be 0 (no anyons), 1 or 2 (either anyon), got "<<I<<endl;
+
+        anyon_sites[i]= I;
     }
 
-    if (x1 >= nw)
-    {
-        cout<<"anyon x location "<< x0<<" outside lattice, bust be from 0 to "<<(nw-1)<<endl;
-        return 1;
-    }
-    if (y1 >= nw)
-    {
-        cout<<"anyon x location "<< x0<<" outside lattice, bust be from 0 to "<<(nw-1)<<endl;
-        return 1;
-    }
+
+    anyon_file.close();
 
 
     //I am very unlikely to get a number of states which needs uint64_t here, but I do need to use the same type as I use for the states (written as a 64 bit number), some of the binary operations may fail otherwise
@@ -137,7 +135,7 @@ int main(int argc, char* argv[])
         prop0_list[j]= norm(empty_eigvec[j]);
     }
 
-    mat lattice_dens0= get_density(states0,prop0_list, N_states0, nw, nh);
+    vec lattice_dens0= get_density(states0,prop0_list, N_states0, nw, nh);
     //print_density_data(lattice_dens0,  nw, nh);//Ok now print it so gnuplot can plot it
     //cerr << endl;
 
@@ -150,11 +148,11 @@ int main(int argc, char* argv[])
     vec V(N_sites);
 
 
-    ifstream potential_file(argv[7]);
+    ifstream potential_file(argv[4]);
 
     if (!potential_file.is_open())
     {
-        cout<<"Could not open file with potentials"<<endl;
+        cout<<"Could not open "<<argv[4]<<endl;
         return 1;
     }
 
@@ -162,7 +160,7 @@ int main(int argc, char* argv[])
     {
         if (! (potential_file>>V[i]))
         {
-            cout<<"Potential file did not match number of sites"<<endl;
+            cout<<"Potential in "<<argv[4]<<" did not match number of sites (potential at site "<<i<<" could not be read)"<<endl;
             return 1;
         }
     }
@@ -170,19 +168,13 @@ int main(int argc, char* argv[])
 
     potential_file.close();
 
-    mat lattice_dens1;//Will be written to, if we want to plot the actual density
+    vec lattice_dens1;//Will be written to, if we want to plot the actual density
 
-    //This is what we really want, two perfectly localized anyons
-    mat q_optimum=mat(nw,nh);
-    q_optimum(x0,y0)=0.5;
-    q_optimum(x1,y1)=0.5;
-
-
-    //Tje actual density difference we found
-    mat q(nw,nh);
+    //The actual density difference we found
+    vec q(N_sites);
 
     //I will use a lambda function, to make getting the fitness, densities and charge difference easier
-    auto get_fitness =[&lattice_dens0,&lattice_dens1 ,&q_optimum,&q,&states1,N_states1,N_sites,N_particles,nw,nh](vec V) -> double
+    auto get_fitness =[&lattice_dens0,&lattice_dens1 ,&anyon_sites,&q,&states1,N_states1,N_sites,N_particles,nw,nh](vec V) -> double
     {
 
         double a2_eigval;
@@ -211,33 +203,49 @@ int main(int argc, char* argv[])
 
         lattice_dens1 = get_density(states1,prop1_list, N_states1, nw, nh);
 
-        //
-        q=mat(nw,nh);
-        double fitness=0;
-        for (uint64_t y = 0; y<nw; ++y)
-        {
-            for (uint64_t x = 0; x<nw; ++x)
-            {
-                double n0 =lattice_dens0(x,y);
-                double n1 =lattice_dens1(x,y);
-                q(x,y)=n0-n1;
-                fitness += std::abs((n0-n1)-q_optimum(x,y));
 
-            }
+        //Check
+
+        //
+        q=vec(N_sites);
+        double fitness=0;
+
+        double anyon0_charge=0;
+        double anyon1_charge=0;
+
+        for (uint64_t i = 0; i < N_sites; ++i)
+        {
+                double n0 =lattice_dens0(i);
+                double n1 =lattice_dens1(i);
+                q(i)=n0-n1;
+                if (anyon_sites[i]==0)
+                    fitness+=std::abs(q(i));//Whatever charge is here IS WRONG
+                else if (anyon_sites[i]==1)//But I don't care where the charge of the anyons are, as long as thje charge in total adds up to 0.5
+                    anyon0_charge+=std::abs(q(i));
+                else if (anyon_sites[i]==2)
+                    anyon1_charge+=std::abs(q(i));
         }
 
+        fitness+=std::abs(anyon0_charge-0.5)+std::abs(anyon1_charge-0.5);
         return fitness;
     };
 
 
 
-
+    auto t1 = std::chrono::high_resolution_clock::now();
     double fitness = get_fitness (V);
+    auto t2 = std::chrono::high_resolution_clock::now();
+
+    /* Getting number of milliseconds as a double. */
+    std::chrono::duration<double, std::milli> ms_double = t2 - t1;
+
+    std::cout << ms_double.count() << "ms\n";
+
 
     print_density_data(q , nw, nh);
     cerr << endl;
 
-    cout<<"Fitness with unoptimized potential "<<argv[7]<<" : "<<fitness<<endl;
+    cout<<"Fitness with unoptimized potential "<<argv[4]<<" : "<<fitness<<endl;
 
 
     size_t steps;
@@ -246,11 +254,16 @@ int main(int argc, char* argv[])
 
     cout<<"Got optimized potential in "<<steps<<" with "<<get_fitness(V_optimized)<<endl;
 
-    //q is written two as soon as we call get_fitness
+    //q is written to as soon as we call get_fitness
     print_density_data(q , nw, nh);
     cerr << endl;
 
 
+    print_density_data(V_optimized , nw, nh);
+    cerr << endl;
 
+    cout<<endl<<"potential:"<<endl;
+
+    cout<<V_optimized<<endl;
     return 0;
 }
