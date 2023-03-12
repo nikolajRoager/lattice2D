@@ -10,11 +10,14 @@ OUTDIR=bin
 
 CXXFLAGS=-Wall -I$(IDIR)
 
-LIBS = -std=c++17 -O2 -larmadillo -O2 -lncurses -lalglib -pthread
+LIBS = -std=c++17 -O2 -larmadillo  -lpthread
 
 default:  q.pdf log.txt
 ;cat log.txt
 
+
+$(OUTDIR)/minimum_failure.exe: $(SRCDIR)/minimum_failure.cpp
+;$(CC) -o $@ $< $(CXXFLAGS) $(LIBS)
 
 $(ODIR)/minimize.o: $(SRCDIR)/minimize.cpp $(IDIR)/minimize.hpp
 ;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
@@ -25,7 +28,7 @@ q.pdf : q.tsv
 
 
 log.txt q.tsv: $(OUTDIR)/two_anyons.exe Makefile V0.tsv
-;$(OUTDIR)/two_anyons.exe 6 6 anyon_location.tsv V0.tsv #1>// log.txt 2>  q.tsv
+;$(OUTDIR)/two_anyons.exe 6 6 anyon_location.tsv V0.tsv 1> log.txt 2>  q.tsv
 
 
 $(OUTDIR)/two_anyons.exe: $(ODIR)/two_anyons.o $(ODIR)/get_state.o $(ODIR)/generate_states.o $(ODIR)/approx.o $(ODIR)/minimize.o

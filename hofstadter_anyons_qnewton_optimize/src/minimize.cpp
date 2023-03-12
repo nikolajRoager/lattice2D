@@ -13,13 +13,6 @@ using namespace arma;//Namespace containing matrices and vectors (actual vectors
 
 
 
-void f1(int n)
-{
-    for (int i = 0; i < 5; ++i) {
-        std::cout << "Thread 1 executing\n";
-    }
-}
-
 
 vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool verbose)
 {
@@ -60,7 +53,6 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
     while (redo)
     {
         redo=false;//In 99% of cases, this will only need to be done once, but maybe we are on a computer where machine epsilon is smaller than expected.
-
 
         step = -1;
         double fx=func(x);
@@ -186,20 +178,21 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                 int i=0;//Current index
 
 
-                auto get_gradi =[&func,&fx]( vec offsetx, double deltax) -> void
+                auto get_gradi =[&func,&fx](double* out, vec offsetx, double deltax) -> void
 
                 {
-                    //double foffsetxk=func(offsetx);
-                    //double Out =(foffsetxk-fx)/deltax;
- //                   *out = (foffsetxk-fx)/deltax;
+                    double foffsetxk=func(offsetx);
+                    *out = (foffsetxk-fx)/deltax;
                 };
 
 
 
-                cout<<"LAUNCHING THREADS"<<endl;
 
                 while (i<n)
                 {
+
+
+
 
                     std::thread myThreads[max_threads];
                     uint64_t active_threads =0;
@@ -214,12 +207,11 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
 
  //                       AllThreads.push_back(thread(f1,1/*, func,fx,GradFx_new[i],offsetx,deltax*/));
 
-                        double foffsetxk=func(offsetx);
-                        GradFx_new[i]= (foffsetxk-fx)/deltax;
+                        //double foffsetxk=func(offsetx);
+                        //GradFx_new[i]= (foffsetxk-fx)/deltax;
 
-                        cout<<"Got true "<<i<<" : "<<GradFx_new[i]<<endl;
 
-                        myThreads[j]=thread(get_gradi,offsetx,deltax);
+                        myThreads[j]=thread(get_gradi,&(GradFx_new[i]),offsetx,deltax);
                         ++active_threads ;
                         ++i;
 
@@ -240,7 +232,6 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                 for (int i = 0;   i<n; ++i)
                 {
 
-                    cout<<"Got threaded "<<i<<" : "<<GradFx_new[i]<<endl;
                     if(std::isinf(GradFx_new[i]))//This is very very rare
                     {
                         //CRAP, deltax was too small, and we got a 0 division, we must retry with a larger little number... unless we have done that too many times already
@@ -648,6 +639,7 @@ vec max_downhill_simplex( function<double(vec)> func , vec x0, double acc, bool 
 
 
 
+/*
 //Taking same input as before, use alglib because I care more about having a well tested and optimized optimization algorithm, than makign everything from scratch. the limited memory Broyden-Fletcher-Goldfarb-Shanno is a quasi newton method which should hopefully make many fewer calls.
 
 #include <libalglib/stdafx.h>
@@ -672,7 +664,6 @@ void libalg_func(const real_1d_array &x, double &func, void *ptr)
 
     cout<<"f="<<func<<" : calls="<<al_calls<<endl;
 }
-
 
 
 vec libalg_lbfgs(function<double(vec)> F, vec x0, uint64_t steps, double acc,bool verbose)//I will keep this third party library contained wihtin minimize.cpp alone, and convert the output back to armadillo style vectors, just to avoid confusion, armadillo is generally superior when it comes to matrix operations, hence why it is still my main library
@@ -747,4 +738,4 @@ vec libalg_lbfgs(function<double(vec)> F, vec x0, uint64_t steps, double acc,boo
     }
 
     return arma_out;
-}
+}*/

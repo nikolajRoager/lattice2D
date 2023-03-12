@@ -173,9 +173,10 @@ int main(int argc, char* argv[])
     //The actual density difference we found
     vec q(N_sites);
 
-    //I will use a lambda function, to make getting the fitness, densities and charge difference easier
-    auto get_fitness =[&lattice_dens0,&lattice_dens1 ,&anyon_sites,&q,&states1,N_states1,N_sites,N_particles,nw,nh](vec V) -> double
+    //I will use a lambda function, to make getting the fitness, densities and charge difference easier, though C++ allows me to modify the captures I NEVER DO THAT IN A PROJECT WHERE I ALSO USE MULTITHREADING, FOR OBVIOUS REASONS, the things actually written to are all given as arguments
+    auto get_fitness =[&lattice_dens0,&anyon_sites,N_states1, &states1,N_sites,N_particles,nw,nh](vec V, vec& lattice_dens1, vec& q) -> double
     {
+
 
         double a2_eigval;
         cx_vec a2_eigvec;
@@ -187,9 +188,9 @@ int main(int argc, char* argv[])
             2,//N_anyons,
             nw,
             nh,
-            states1,
-            a2_eigval,
-            a2_eigvec,
+            states1,    //written to
+            a2_eigval,  //written to
+            a2_eigvec,   //written to
             V
         );
         //Get the propability of finding the system in either basis state, this is one step before finding the expected number of particles in each site
@@ -233,7 +234,7 @@ int main(int argc, char* argv[])
 
 
     auto t1 = std::chrono::high_resolution_clock::now();
-    double fitness = get_fitness (V);
+    double fitness = get_fitness (V,lattice_dens1,q);
     auto t2 = std::chrono::high_resolution_clock::now();
 
     /* Getting number of milliseconds as a double. */
@@ -250,9 +251,15 @@ int main(int argc, char* argv[])
 
     size_t steps;
     cout<<std::setprecision(16);
-    vec V_optimized = qnewton(get_fitness,V,steps,1e-5,true);
+    vec V_optimized = qnewton([&get_fitness](vec V)
+    {
+        //Don't output these things, but create them locally so that we don't run into problems with multithreading
+        vec lattice_dens1;
+        vec q;
+        return get_fitness(V,lattice_dens1,q);
+    },V,steps,1e-5,true);
 
-    cout<<"Got optimized potential in "<<steps<<" with "<<get_fitness(V_optimized)<<endl;
+    cout<<"Got optimized potential in "<<steps<<" with "<<get_fitness(V_optimized,lattice_dens1,q)<<endl;
 
     //q is written to as soon as we call get_fitness
     print_density_data(q , nw, nh);

@@ -13,6 +13,7 @@
 
 //The actual math library
 #include <armadillo>
+#include<thread>
 
 using namespace std; //Namespace containing in and out stream, std::vector (dynamically sized list) and complex numbers
 using namespace arma;//Namespace containing matrices and vectors (actual vectors)
@@ -20,6 +21,8 @@ using namespace arma;//Namespace containing matrices and vectors (actual vectors
 
 #include "approx.hpp"
 
+
+std::mutex stupid_lock;
 
 //Default version without a potential
 void get_state(
@@ -59,6 +62,7 @@ double& this_eigval,
 cx_vec& this_eigvec,
 vec& V)
 {
+
     //Make our hamiltonian matrix
     sp_cx_mat H (N_states, N_states);//Sparse matrix, as we have mostly 0 entries, initialized as only zeros by default
 
@@ -157,8 +161,12 @@ vec& V)
 
     //Here we get N_states eigenstates, we will only want to print the 3 lowest, so sort them in ascending order
     //eigs_gen = [eig]envalues of [s]parse [gen]eral (i.e. need not be real) matrix
+
+    stupid_lock.lock();
+
     eigs_gen( eigval, eigvec, H, 1, "sr");//The lowest eigenstate
 
+    stupid_lock.unlock();
 
     this_eigval=eigval[0].real();
     this_eigvec = eigvec.col(0);
