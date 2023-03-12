@@ -247,6 +247,7 @@ int main(int argc, char* argv[])
         for (uint64_t x = 0; x<nw; ++x)
         {
             cout<<q(x,y)<<"\t";
+            sum2+=q(x,y);
         }
         cout<<'\n';
     }

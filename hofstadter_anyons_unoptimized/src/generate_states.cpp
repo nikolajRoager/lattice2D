@@ -301,10 +301,13 @@ mat get_density(const vector<state_t>& states,vector<double> superpositions , co
                 if( (states[k] >> (i+x)) & ((state_t)1))
                     Out(x,y)+=superpositions[k];
             }
+
         }
 
         i+=w;
     }
+
+    cout<<end;
 
     return Out;
 }
