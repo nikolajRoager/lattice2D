@@ -14,7 +14,7 @@ using namespace arma;//Namespace containing matrices and vectors (actual vectors
 
 
 
-vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool verbose)
+vec qnewton( function<double(vec)> F, vec x0, size_t& step,size_t max_steps, double acc, bool verbose)
 {
 
     //I want ALL THE THREADS
@@ -47,7 +47,6 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
 
 
     bool redo=true;//I have an emergency redo function, in case deltax is too small, in some rare cases, I have seen deltax be treated as a 0, breaking the algorithm uppon division, if that happen, we will retry here
-    int max_steps=256;//should never need that much
 
     uint64_t total_calls =1;//We will start with one call, before starting optimization
 
@@ -78,7 +77,6 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
             cout<<"Start f(x)="<<fx<<endl;
         }
 
-        bool haha = false;
 
         do
         {//Each step
@@ -166,14 +164,10 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
 
                 double fx_new = fx;
 
-                if (haha)
-                    cout<<"DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE"<<endl;
 
                 for (int i = 0; i < 32; ++i)
                 {
 
-                    if (haha)
-                        cout<<"DO "<<i<<" AT "<<x_new[0]<<endl;
                     // Perform backtracking lambda -> lambda/2 and update s until f(x+s)<f(x)+alpha dot(s,∇ f(x)) (or until lambda too small)
                     fx_new=func(x_new);//Hopefully we won't calls this 32 times
                     if (fx_new < fx+ alpha*dot(S,GradFx)  )
@@ -349,15 +343,15 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
             }
             catch(...)//Crap, lets just hope this does not happen again
             {
-                cout<<"Error happened (matrix could not be diagonalized), redoing hessian and adding random offset"<<endl;
+                cout<<"WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior."<<endl;
 
                 B = mat(n,n,fill::eye);
                 if (verbose)
                 {
                     cout<<"RESET B AS ERROR WAS RAISED"<<endl;
-                    cout<<" x = "<<x<<" -> "<<best_x<<endl;
-                    x=best_x;
-                    haha =true;
+
+                    x=x+GradFx*little;
+                    cout<<x<<endl;
                     //redo =true;
                 }
             }

@@ -1,0 +1,647 @@
+Measuring time of get fitness function, by running it 50 times 
+Got 197.882 ms per iteration 
+Fitness with unoptimized potential V0.tsv : 1.33339
+Start f(x)=1.333392283387727
+Step 0	 f(x)=1.281668467145238 Function calls: 43
+Step 1	 f(x)=1.09655396056565 Function calls: 20
+Step 2	 f(x)=0.8249610381605386 Function calls: 19
+RESET B AS LINESEARCH FAILED
+Step 3	 f(x)=0.8249610382076232 Function calls: 50
+Step 4	 f(x)=0.7919643248132707 Function calls: 22
+Step 5	 f(x)=0.7864732549232761 Function calls: 22
+Step 6	 f(x)=0.7665382979665409 Function calls: 20
+Step 7	 f(x)=0.7616996230243007 Function calls: 23
+Step 8	 f(x)=0.6652351888285886 Function calls: 19
+RESET B AS LINESEARCH FAILED
+Step 9	 f(x)=0.6652351888976038 Function calls: 50
+Step 10	 f(x)=0.6538605148170975 Function calls: 25
+Step 11	 f(x)=0.6333069427743256 Function calls: 20
+Step 12	 f(x)=0.5993377185238186 Function calls: 19
+Step 13	 f(x)=0.5307876887892133 Function calls: 19
+RESET B AS LINESEARCH FAILED
+Step 14	 f(x)=0.5307876891726186 Function calls: 50
+Step 15	 f(x)=0.5060130062122855 Function calls: 23
+Step 16	 f(x)=0.5059528905648369 Function calls: 21
+Step 17	 f(x)=0.5039681188547921 Function calls: 22
+Step 18	 f(x)=0.4780624687301493 Function calls: 21
+Step 19	 f(x)=0.3328244786858147 Function calls: 19
+Step 20	 f(x)=0.3031888459954675 Function calls: 21
+Step 21	 f(x)=0.2696333848766257 Function calls: 19
+Step 22	 f(x)=0.2398646515920204 Function calls: 19
+Step 23	 f(x)=0.2196506636719808 Function calls: 19
+RESET B AS LINESEARCH FAILED
+Step 24	 f(x)=0.2196506636732087 Function calls: 50
+Step 25	 f(x)=0.2193938063221415 Function calls: 28
+Step 26	 f(x)=0.2153868482851787 Function calls: 25
+Step 27	 f(x)=0.2121022954437233 Function calls: 25
+Step 28	 f(x)=0.211229178122722 Function calls: 27
+Step 29	 f(x)=0.2105248919082169 Function calls: 22
+Step 30	 f(x)=0.2068759872452422 Function calls: 20
+Step 31	 f(x)=0.1809460730029823 Function calls: 19
+Step 32	 f(x)=0.1647938182676303 Function calls: 19
+RESET B AS LINESEARCH FAILED
+Step 33	 f(x)=0.164793818271525 Function calls: 50
+Step 34	 f(x)=0.1532634828503484 Function calls: 26
+Step 35	 f(x)=0.1522433849784146 Function calls: 27
+Step 36	 f(x)=0.1514747535721999 Function calls: 26
+Step 37	 f(x)=0.1420956855303983 Function calls: 24
+Step 38	 f(x)=0.1390492619881521 Function calls: 25
+Step 39	 f(x)=0.1368062600771117 Function calls: 21
+Step 40	 f(x)=0.1296783756950272 Function calls: 22
+Step 41	 f(x)=0.1286940207747713 Function calls: 24
+Step 42	 f(x)=0.1279336985044101 Function calls: 25
+Step 43	 f(x)=0.127571338740718 Function calls: 25
+Step 44	 f(x)=0.1269165551104184 Function calls: 24
+RESET B AS LINESEARCH FAILED
+Step 45	 f(x)=0.1269165551335612 Function calls: 50
+Step 46	 f(x)=0.1256195870262486 Function calls: 33
+Step 47	 f(x)=0.1252483263014801 Function calls: 33
+Step 48	 f(x)=0.1252184698707273 Function calls: 35
+Step 49	 f(x)=0.122267383841352 Function calls: 26
+Step 50	 f(x)=0.1206547890229991 Function calls: 24
+Step 51	 f(x)=0.1186258033184949 Function calls: 25
+Step 52	 f(x)=0.1169520762590814 Function calls: 24
+Step 53	 f(x)=0.1146878300837813 Function calls: 21
+Step 54	 f(x)=0.1106944739056848 Function calls: 21
+Step 55	 f(x)=0.1097582801121329 Function calls: 21
+Step 56	 f(x)=0.1091828956355648 Function calls: 21
+RESET B AS LINESEARCH FAILED
+Step 57	 f(x)=0.1091828956533434 Function calls: 50
+Step 58	 f(x)=0.1089506244654651 Function calls: 34
+Step 59	 f(x)=0.1088929190251719 Function calls: 32
+Step 60	 f(x)=0.1083235962482599 Function calls: 30
+Step 61	 f(x)=0.1075851602969712 Function calls: 28
+Step 62	 f(x)=0.1075830458319457 Function calls: 31
+Step 63	 f(x)=0.1044069712531893 Function calls: 25
+Step 64	 f(x)=0.1041804048412862 Function calls: 28
+Step 65	 f(x)=0.102031586170126 Function calls: 25
+Step 66	 f(x)=0.1015851586811219 Function calls: 26
+Step 67	 f(x)=0.1015785868386345 Function calls: 32
+Step 68	 f(x)=0.1015783814842762 Function calls: 37
+Step 69	 f(x)=0.1015783454718607 Function calls: 39
+Step 70	 f(x)=0.1015783411586156 Function calls: 42
+Step 71	 f(x)=0.1015783403884016 Function calls: 44
+Step 72	 f(x)=0.1015783385195042 Function calls: 42
+Step 73	 f(x)=0.1015783384929554 Function calls: 50
+Step 74	 f(x)=0.1015783384059612 Function calls: 48
+Step 75	 f(x)=0.1015783383995969 Function calls: 48
+Step 76	 f(x)=0.1012233780236184 Function calls: 21
+RESET B AS LINESEARCH FAILED
+Step 77	 f(x)=0.1012233780266198 Function calls: 50
+Step 78	 f(x)=0.1012054724998941 Function calls: 38
+Step 79	 f(x)=0.101160428279802 Function calls: 32
+Step 80	 f(x)=0.100964096981435 Function calls: 28
+Step 81	 f(x)=0.1008143470087038 Function calls: 29
+Step 82	 f(x)=0.1007999449688185 Function calls: 32
+Step 83	 f(x)=0.1007993181283865 Function calls: 34
+Step 84	 f(x)=0.1006180085640554 Function calls: 25
+Step 85	 f(x)=0.1004412214562046 Function calls: 27
+Step 86	 f(x)=0.1003828101599607 Function calls: 27
+Step 87	 f(x)=0.1002716852295196 Function calls: 24
+Step 88	 f(x)=0.09968337199964557 Function calls: 22
+Step 89	 f(x)=0.09960673245179512 Function calls: 23
+RESET B AS LINESEARCH FAILED
+Step 90	 f(x)=0.09960673245536653 Function calls: 50
+Step 91	 f(x)=0.09948495661795492 Function calls: 37
+Step 92	 f(x)=0.09946202497025225 Function calls: 33
+Step 93	 f(x)=0.09942408100401981 Function calls: 32
+Step 94	 f(x)=0.099416517443925 Function calls: 31
+Step 95	 f(x)=0.0993940386016591 Function calls: 29
+Step 96	 f(x)=0.09891489135990132 Function calls: 26
+Step 97	 f(x)=0.09878686001605071 Function calls: 28
+Step 98	 f(x)=0.09876532424723877 Function calls: 29
+Step 99	 f(x)=0.09876014247835677 Function calls: 31
+Step 100	 f(x)=0.09875884747032504 Function calls: 33
+Step 101	 f(x)=0.09875862551383729 Function calls: 35
+Step 102	 f(x)=0.09875853461121208 Function calls: 36
+Step 103	 f(x)=0.09875848944789345 Function calls: 37
+Step 104	 f(x)=0.09875848397224651 Function calls: 40
+Step 105	 f(x)=0.09875847964722081 Function calls: 45
+RESET B AS LINESEARCH FAILED
+Step 106	 f(x)=0.09875848361870834 Function calls: 50
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   2.4817
+   2.7893
+   0.1742
+   0.2323
+   0.0372
+   0.2103
+   2.7696
+   0.8566
+   0.5124
+  -0.1742
+   3.0722
+   0.0652
+   0.1357
+   0.5605
+   3.0950
+   2.0144
+  -0.1970
+   0.2605
+
+Step 107	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   4.6161
+   5.7539
+   0.1742
+   0.2323
+   0.0372
+   0.2103
+   5.7342
+   0.8566
+   0.5124
+  -0.1742
+   5.8805
+   0.0652
+   0.1357
+   0.5605
+   6.0596
+   3.5445
+  -0.1970
+   0.2605
+
+Step 108	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   6.7506
+   8.7185
+   0.1742
+   0.2323
+   0.0372
+   0.2103
+   8.6988
+   0.8566
+   0.5124
+  -0.1742
+   8.6888
+   0.0652
+   0.1357
+   0.5605
+   9.0242
+   5.0745
+  -0.1970
+   0.2605
+
+Step 109	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+    8.8850
+   11.6831
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   11.6634
+    0.8566
+    0.5124
+   -0.1742
+   11.4971
+    0.0652
+    0.1357
+    0.5605
+   11.9888
+    6.6045
+   -0.1970
+    0.2605
+
+Step 110	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   11.0194
+   14.6477
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   14.6280
+    0.8566
+    0.5124
+   -0.1742
+   14.3053
+    0.0652
+    0.1357
+    0.5605
+   14.9534
+    8.1346
+   -0.1970
+    0.2605
+
+Step 111	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   13.1539
+   17.6122
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   17.5926
+    0.8566
+    0.5124
+   -0.1742
+   17.1136
+    0.0652
+    0.1357
+    0.5605
+   17.9180
+    9.6646
+   -0.1970
+    0.2605
+
+Step 112	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   15.2883
+   20.5768
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   20.5572
+    0.8566
+    0.5124
+   -0.1742
+   19.9219
+    0.0652
+    0.1357
+    0.5605
+   20.8826
+   11.1946
+   -0.1970
+    0.2605
+
+Step 113	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   17.4228
+   23.5414
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   23.5218
+    0.8566
+    0.5124
+   -0.1742
+   22.7302
+    0.0652
+    0.1357
+    0.5605
+   23.8472
+   12.7247
+   -0.1970
+    0.2605
+
+Step 114	 f(x)=0.09875848361870834 Function calls: 2
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   19.5572
+   26.5060
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   26.4864
+    0.8566
+    0.5124
+   -0.1742
+   25.5385
+    0.0652
+    0.1357
+    0.5605
+   26.8118
+   14.2547
+   -0.1970
+    0.2605
+
+Step 115	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   21.6917
+   29.4706
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   29.4510
+    0.8566
+    0.5124
+   -0.1742
+   28.3468
+    0.0652
+    0.1357
+    0.5605
+   29.7764
+   15.7847
+   -0.1970
+    0.2605
+
+Step 116	 f(x)=0.09875848361870834 Function calls: 2
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   23.8261
+   32.4352
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   32.4156
+    0.8566
+    0.5124
+   -0.1742
+   31.1550
+    0.0652
+    0.1357
+    0.5605
+   32.7410
+   17.3147
+   -0.1970
+    0.2605
+
+Step 117	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   25.9606
+   35.3998
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   35.3802
+    0.8566
+    0.5124
+   -0.1742
+   33.9633
+    0.0652
+    0.1357
+    0.5605
+   35.7056
+   18.8448
+   -0.1970
+    0.2605
+
+Step 118	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   28.0950
+   38.3644
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   38.3448
+    0.8566
+    0.5124
+   -0.1742
+   36.7716
+    0.0652
+    0.1357
+    0.5605
+   38.6702
+   20.3748
+   -0.1970
+    0.2605
+
+Step 119	 f(x)=0.09875848361870834 Function calls: 2
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   30.2294
+   41.3290
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   41.3094
+    0.8566
+    0.5124
+   -0.1742
+   39.5799
+    0.0652
+    0.1357
+    0.5605
+   41.6348
+   21.9048
+   -0.1970
+    0.2605
+
+Step 120	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   32.3639
+   44.2936
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   44.2739
+    0.8566
+    0.5124
+   -0.1742
+   42.3882
+    0.0652
+    0.1357
+    0.5605
+   44.5994
+   23.4349
+   -0.1970
+    0.2605
+
+Step 121	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   34.4983
+   47.2582
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   47.2385
+    0.8566
+    0.5124
+   -0.1742
+   45.1965
+    0.0652
+    0.1357
+    0.5605
+   47.5640
+   24.9649
+   -0.1970
+    0.2605
+
+Step 122	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   36.6328
+   50.2228
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   50.2031
+    0.8566
+    0.5124
+   -0.1742
+   48.0047
+    0.0652
+    0.1357
+    0.5605
+   50.5286
+   26.4949
+   -0.1970
+    0.2605
+
+Step 123	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   38.7672
+   53.1874
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   53.1677
+    0.8566
+    0.5124
+   -0.1742
+   50.8130
+    0.0652
+    0.1357
+    0.5605
+   53.4932
+   28.0250
+   -0.1970
+    0.2605
+
+Step 124	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   40.9017
+   56.1520
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   56.1323
+    0.8566
+    0.5124
+   -0.1742
+   53.6213
+    0.0652
+    0.1357
+    0.5605
+   56.4578
+   29.5550
+   -0.1970
+    0.2605
+
+Step 125	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   43.0361
+   59.1166
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   59.0969
+    0.8566
+    0.5124
+   -0.1742
+   56.4296
+    0.0652
+    0.1357
+    0.5605
+   59.4223
+   31.0850
+   -0.1970
+    0.2605
+
+Step 126	 f(x)=0.09875848361870834 Function calls: 4
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   45.1705
+   62.0812
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   62.0615
+    0.8566
+    0.5124
+   -0.1742
+   59.2379
+    0.0652
+    0.1357
+    0.5605
+   62.3869
+   32.6151
+   -0.1970
+    0.2605
+
+Step 127	 f(x)=0.09875848361870834 Function calls: 1
+WARNING (matrix could not be diagonalized), the program will jump to a new position and try again, using the remaining steps, but the result is likely inferior.
+RESET B AS ERROR WAS RAISED
+   47.3050
+   65.0458
+    0.1742
+    0.2323
+    0.0372
+    0.2103
+   65.0261
+    0.8566
+    0.5124
+   -0.1742
+   62.0462
+    0.0652
+    0.1357
+    0.5605
+   65.3515
+   34.1451
+   -0.1970
+    0.2605
+
+ALGORITHM FAILED: too many steps
+Finished in 3226 calls
+The final step (0.09875848361870834) is worse than the best ever step (0.09875847964722081), returning to the best ever step
+Got optimized symmetric potential in 128 steps (13 minutes) with 0.09875847964722081
+
+potential:
+0.3472328322754356
+-0.1753260701624362
+0.1741614510948438
+0.2322832811546696
+0.03715480874148298
+0.2102533253506138
+-0.1949838194646751
+0.8566334928352114
+0.5124240159035373
+-0.1742219958399966
+0.2639151794050615
+0.06517992480135694
+0.1357376957606153
+0.5604999671405865
+0.1304387198054357
+0.4844011103491724
+-0.1970438300157977
+0.2605455298946315
+0.2605455298946315
+-0.1970438300157977
+0.4844011103491724
+0.1304387198054357
+0.5604999671405865
+0.1357376957606153
+0.06517992480135694
+0.2639151794050615
+-0.1742219958399966
+0.5124240159035373
+0.8566334928352114
+-0.1949838194646751
+0.2102533253506138
+0.03715480874148298
+0.2322832811546696
+0.1741614510948438
+-0.1753260701624362
+0.3472328322754356
+

@@ -181,14 +181,8 @@ int main(int argc, char* argv[])
 
 
     //I will use a lambda function, to make getting the fitness, densities and charge difference easier, though C++ allows me to modify the captures I NEVER DO THAT IN A PROJECT WHERE I ALSO USE MULTITHREADING, FOR OBVIOUS REASONS, the things actually written to are all given as arguments
-    auto get_fitness =[&lattice_dens0,&anyon_sites,N_states1, &states1,N_sites,half_N_sites,N_particles,nw,nh](vec _V, vec& lattice_dens1, vec& q) -> double
+    auto get_fitness =[&lattice_dens0,&anyon_sites,N_states1, &states1,N_sites,N_particles,nw,nh](vec V, vec& lattice_dens1, vec& q) -> double
     {
-        vec V(N_sites);
-        for (uint64_t i = 0; i < half_N_sites; ++i)
-        {
-            V(i) = _V(i);
-            V(N_sites-i-1)=_V(i);
-        }
 
         double a2_eigval;
         cx_vec a2_eigvec;
@@ -246,7 +240,17 @@ int main(int argc, char* argv[])
         return fitness;
     };
 
+    auto get_fitness_sym =[&get_fitness,half_N_sites,N_sites](vec _V, vec& lattice_dens1, vec& q) -> double
+    {
+        vec V(N_sites);
+        for (uint64_t i = 0; i < half_N_sites; ++i)
+        {
+            V(i) = _V(i);
+            V(N_sites-i-1)=_V(i);
+        }
 
+        return get_fitness(V,lattice_dens1,q);
+    };
 
     cout<<"Measuring time of get fitness function, by running it 50 times "<<endl;
     double time=0;
@@ -254,7 +258,7 @@ int main(int argc, char* argv[])
     auto t1 = std::chrono::high_resolution_clock::now();
     for (uint64_t i = 0; i < 50; ++i)
     {
-        fitness = get_fitness (V,lattice_dens1,q);
+        fitness = get_fitness_sym (V,lattice_dens1,q);
 
     }
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -276,33 +280,51 @@ int main(int argc, char* argv[])
 
     auto t_opt_start = std::chrono::high_resolution_clock::now();
 
+    //Optimize symmetric potential
+    vec V_optimized_half = qnewton([&get_fitness_sym](vec V)
+    {
+        //Don't output these things, but create them locally so that we don't run into problems with multithreading
+        vec lattice_dens1;
+        vec q;
+        return get_fitness_sym(V,lattice_dens1,q);
+    },V,steps,128,1e-5,true);
 
-    vec V_optimized = qnewton([&get_fitness](vec V)
+
+
+
+    auto t_opt_end = std::chrono::high_resolution_clock::now();
+    std::chrono::minutes duration = std::chrono::duration_cast<std::chrono::minutes>(t_opt_end - t_opt_start);
+    cout<<"Got optimized symmetric potential in "<<steps<<" steps ("<<duration.count()<<" minutes) with "<<get_fitness_sym(V_optimized_half,lattice_dens1,q)<<endl;
+
+    vec V_optimized(N_sites);
+    for (uint64_t i = 0; i < half_N_sites; ++i)
+    {
+        V_optimized(i) = V_optimized_half(i);
+        V_optimized(N_sites-i-1)=V_optimized_half(i);
+    }
+/*
+    cout<<"Now turning off symmetry to optimize a little better "<<endl;
+
+    //This is much slower
+    t_opt_start = std::chrono::high_resolution_clock::now();
+    V_optimized = qnewton([&get_fitness](vec V)
     {
         //Don't output these things, but create them locally so that we don't run into problems with multithreading
         vec lattice_dens1;
         vec q;
         return get_fitness(V,lattice_dens1,q);
-    },V,steps,1e-5,true);
+    },V_optimized,steps,16,1e-5,true);
+    t_opt_end = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::minutes>(t_opt_end - t_opt_start);
 
-    auto t_opt_end = std::chrono::high_resolution_clock::now();
-    std::chrono::minutes duration = std::chrono::duration_cast<std::chrono::minutes>(t_opt_end - t_opt_start);
-    cout<<"Got optimized potential in "<<steps<<" ("<<duration.count()<<" minutes) with "<<get_fitness(V_optimized,lattice_dens1,q)<<endl;
-
-    vec V_opt(N_sites);
-    for (uint64_t i = 0; i < half_N_sites; ++i)
-    {
-        V_opt(i) = V_optimized(i);
-        V_opt(N_sites-i-1)=V_optimized(i);
-    }
-
-
+    cout<<"Got optimized potential in another "<<steps<<" steps ("<<duration.count()<<" minutes) with "<<get_fitness(V_optimized,lattice_dens1,q)<<endl;
+*/
     //q is written to as soon as we call get_fitness
     print_density_data(q , nw, nh);
     cerr << endl;
 
 
-    print_density_data(V_optimized , nw, nh);
+    print_density_data(V_optimized, nw, nh);
     cerr << endl;
 
     cout<<endl<<"potential:"<<endl;

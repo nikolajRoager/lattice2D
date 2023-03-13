@@ -10,7 +10,7 @@ using namespace std; //Namespace containing in and out stream, std::vector (dyna
 using namespace arma;//Namespace containing matrices and vectors (actual vectors)
 
 
-vec qnewton( function<double(vec)> func , vec x0, size_t& steps, double acc=1e-2, bool verbose=false);
+vec qnewton( function<double(vec)> func , vec x0, size_t& steps,size_t max_steps=128, double acc=1e-2, bool verbose=false);
 
 //Mirror function to maximize instead
 vec max_qnewton( function<double(vec)> func , vec x0, size_t& steps, double acc=1e-2, bool verbose=false);

@@ -171,6 +171,8 @@ vec& V)
 
     if (eigval.size()==0)
     {
+
+
         throw std::runtime_error("decomposition failed, if at all possible try again literally anywhere else");
     }
     this_eigval=eigval[0].real();

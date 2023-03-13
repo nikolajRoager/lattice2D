@@ -1,667 +1,188 @@
 Measuring time of get fitness function, by running it 50 times 
-Got 317.03 ms per iteration 
+Got 191.63 ms per iteration 
 Fitness with unoptimized potential V0.tsv : 1.33339
-Start f(x)=1.333392283387752
-Step 0	 f(x)=1.281668708441456 Function calls: 43
-Step 1	 f(x)=1.096554415145333 Function calls: 20
-Step 2	 f(x)=0.8249604962211514 Function calls: 19
+Start f(x)=1.204018965964208
+Step 0	 f(x)=1.187487529017163 Function calls: 75
+Step 1	 f(x)=1.165199094753421 Function calls: 40
+Step 2	 f(x)=1.1410834741178 Function calls: 38
+Step 3	 f(x)=1.042507110550378 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 3	 f(x)=0.824960496268222 Function calls: 50
-Step 4	 f(x)=0.7919648794631319 Function calls: 22
-Step 5	 f(x)=0.7864768354577265 Function calls: 22
-Step 6	 f(x)=0.7665374408641553 Function calls: 20
-Step 7	 f(x)=0.7617000402506693 Function calls: 23
-Step 8	 f(x)=0.6652182135281498 Function calls: 19
+Step 4	 f(x)=1.042507110585776 Function calls: 68
+Step 5	 f(x)=0.991764666265226 Function calls: 42
+Step 6	 f(x)=0.9902955566421301 Function calls: 46
+Step 7	 f(x)=0.9788644265911394 Function calls: 39
+Step 8	 f(x)=0.8946040192184759 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 9	 f(x)=0.6652182135970141 Function calls: 50
-Step 10	 f(x)=0.653957311216488 Function calls: 25
-Step 11	 f(x)=0.6334082192025416 Function calls: 20
-Step 12	 f(x)=0.5993934594452414 Function calls: 19
-Step 13	 f(x)=0.5308903653381977 Function calls: 19
+Step 9	 f(x)=0.8946040192400067 Function calls: 68
+Step 10	 f(x)=0.8905534787437923 Function calls: 44
+Step 11	 f(x)=0.8870212543579017 Function calls: 42
+Step 12	 f(x)=0.8854619274416605 Function calls: 43
+Step 13	 f(x)=0.8282394016305439 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 14	 f(x)=0.530890365722404 Function calls: 50
-Step 15	 f(x)=0.5057928868766799 Function calls: 23
-Step 16	 f(x)=0.5057254034354622 Function calls: 21
-Step 17	 f(x)=0.4944646211982179 Function calls: 22
-Step 18	 f(x)=0.4671314200412668 Function calls: 21
-Step 19	 f(x)=0.2984984007662056 Function calls: 19
-Step 20	 f(x)=0.2859741812170687 Function calls: 20
-Step 21	 f(x)=0.2765218973334096 Function calls: 22
-Step 22	 f(x)=0.2689105085432653 Function calls: 19
-Step 23	 f(x)=0.2337019876324653 Function calls: 19
+Step 14	 f(x)=0.8282394016673742 Function calls: 68
+Step 15	 f(x)=0.8263934047203696 Function calls: 42
+Step 16	 f(x)=0.8257660200704026 Function calls: 44
+Step 17	 f(x)=0.8257341200418093 Function calls: 47
+Step 18	 f(x)=0.8245730434785817 Function calls: 40
+Step 19	 f(x)=0.8202067215130805 Function calls: 38
+Step 20	 f(x)=0.8004101783214065 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 24	 f(x)=0.2337019876400713 Function calls: 50
-Step 25	 f(x)=0.2276146332507269 Function calls: 28
-Step 26	 f(x)=0.2264620613705123 Function calls: 28
-Step 27	 f(x)=0.2127813468166237 Function calls: 24
-Step 28	 f(x)=0.2125449919975063 Function calls: 28
-Step 29	 f(x)=0.2125106213518232 Function calls: 25
-Step 30	 f(x)=0.2059664112839862 Function calls: 19
-Step 31	 f(x)=0.1613906696463209 Function calls: 19
-Step 32	 f(x)=0.1423420890353227 Function calls: 19
-Step 33	 f(x)=0.1402636531496511 Function calls: 21
-Step 34	 f(x)=0.1356528675485263 Function calls: 19
+Step 21	 f(x)=0.8004101783338619 Function calls: 68
+Step 22	 f(x)=0.8002063189572439 Function calls: 47
+Step 23	 f(x)=0.7962107379926147 Function calls: 42
+Step 24	 f(x)=0.7914575554751033 Function calls: 42
+Step 25	 f(x)=0.7832958603471045 Function calls: 40
+Step 26	 f(x)=0.7795291193799452 Function calls: 40
+Step 27	 f(x)=0.7648009360896906 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 35	 f(x)=0.1356528675493454 Function calls: 50
-Step 36	 f(x)=0.1356363156365993 Function calls: 32
-Step 37	 f(x)=0.135234901086627 Function calls: 30
-Step 38	 f(x)=0.1351677107927171 Function calls: 32
-Step 39	 f(x)=0.131684765355165 Function calls: 24
-Step 40	 f(x)=0.1313413122122792 Function calls: 28
-Step 41	 f(x)=0.131262066233477 Function calls: 30
-Step 42	 f(x)=0.130529245380483 Function calls: 23
-Step 43	 f(x)=0.1303467397898125 Function calls: 26
-Step 44	 f(x)=0.1298185860870674 Function calls: 23
-Step 45	 f(x)=0.1291089367343605 Function calls: 23
-Step 46	 f(x)=0.1290776468626241 Function calls: 27
-Step 47	 f(x)=0.1290732603725551 Function calls: 28
+Step 28	 f(x)=0.7648009360926955 Function calls: 68
+Step 29	 f(x)=0.7637171301171164 Function calls: 44
+Step 30	 f(x)=0.7598644709075243 Function calls: 42
+Step 31	 f(x)=0.7576880527398318 Function calls: 43
+Step 32	 f(x)=0.7541741838211056 Function calls: 40
+Step 33	 f(x)=0.7297756997513284 Function calls: 37
+Step 34	 f(x)=0.7235953321770308 Function calls: 37
+Step 35	 f(x)=0.7232344800530419 Function calls: 37
+Step 36	 f(x)=0.7231836148566596 Function calls: 42
+Step 37	 f(x)=0.717699183122539 Function calls: 37
+Step 38	 f(x)=0.707051436889661 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 48	 f(x)=0.1290732603774327 Function calls: 50
-Step 49	 f(x)=0.1245120107649035 Function calls: 32
-Step 50	 f(x)=0.1244546293481483 Function calls: 27
-Step 51	 f(x)=0.1240744108145829 Function calls: 27
-Step 52	 f(x)=0.1238524072340783 Function calls: 27
-Step 53	 f(x)=0.123641535088689 Function calls: 24
-Step 54	 f(x)=0.1236011118846521 Function calls: 23
-Step 55	 f(x)=0.1190480032198249 Function calls: 22
-Step 56	 f(x)=0.117121731309062 Function calls: 23
-Step 57	 f(x)=0.1164792591109072 Function calls: 24
-Step 58	 f(x)=0.1162651561061277 Function calls: 26
-Step 59	 f(x)=0.1162277874190552 Function calls: 27
-Step 60	 f(x)=0.1162276456724664 Function calls: 35
-Step 61	 f(x)=0.1162276279551102 Function calls: 38
-Step 62	 f(x)=0.1162276258485745 Function calls: 41
-Step 63	 f(x)=0.1162276255955058 Function calls: 43
-Step 64	 f(x)=0.1162276236972652 Function calls: 42
-Step 65	 f(x)=0.1162276192279801 Function calls: 46
-Step 66	 f(x)=0.1162276189873812 Function calls: 42
+Step 39	 f(x)=0.7070514368937632 Function calls: 68
+Step 40	 f(x)=0.7035177460451951 Function calls: 45
+Step 41	 f(x)=0.7031156761038571 Function calls: 46
+Step 42	 f(x)=0.7024446832404148 Function calls: 44
+Step 43	 f(x)=0.7022157419469339 Function calls: 44
+Step 44	 f(x)=0.7020960869965037 Function calls: 43
+Step 45	 f(x)=0.6995811322301086 Function calls: 39
+Step 46	 f(x)=0.6946154884512324 Function calls: 38
+Step 47	 f(x)=0.6790979278335683 Function calls: 37
+Step 48	 f(x)=0.6756365290075335 Function calls: 37
 RESET B AS LINESEARCH FAILED
-Step 67	 f(x)=0.1162276257342841 Function calls: 50
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
+Step 49	 f(x)=0.6756365296090349 Function calls: 68
+Step 50	 f(x)=0.6727821869531312 Function calls: 45
+Step 51	 f(x)=0.6720840415395872 Function calls: 44
+Step 52	 f(x)=0.6711333885586727 Function calls: 43
+Step 53	 f(x)=0.6709300253049169 Function calls: 44
+Step 54	 f(x)=0.6708676605474994 Function calls: 44
+Step 55	 f(x)=0.6704007786464228 Function calls: 43
+Step 56	 f(x)=0.670041231294823 Function calls: 40
+Step 57	 f(x)=0.6673923002471965 Function calls: 38
+Step 58	 f(x)=0.6532914105501179 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 59	 f(x)=0.653291410551248 Function calls: 68
+Step 60	 f(x)=0.6522232747010785 Function calls: 45
+Step 61	 f(x)=0.6517467747214203 Function calls: 46
+Step 62	 f(x)=0.6515019097279835 Function calls: 45
+Step 63	 f(x)=0.6488143553806356 Function calls: 42
+Step 64	 f(x)=0.6484921256295304 Function calls: 43
+Step 65	 f(x)=0.6483571134811228 Function calls: 44
+Step 66	 f(x)=0.6467487441022204 Function calls: 40
+Step 67	 f(x)=0.6466524810106977 Function calls: 39
+Step 68	 f(x)=0.6457870689027965 Function calls: 37
+Step 69	 f(x)=0.6290580012898226 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 70	 f(x)=0.6290580029157476 Function calls: 68
+Step 71	 f(x)=0.6262645491611282 Function calls: 45
+Step 72	 f(x)=0.6258380909412099 Function calls: 45
+Step 73	 f(x)=0.6257170765941933 Function calls: 43
+Step 74	 f(x)=0.6253007452343098 Function calls: 42
+Step 75	 f(x)=0.625267371806285 Function calls: 44
+Step 76	 f(x)=0.6249923043917006 Function calls: 43
+Step 77	 f(x)=0.6247720690762077 Function calls: 42
+Step 78	 f(x)=0.6222176202807772 Function calls: 39
+Step 79	 f(x)=0.6221938345882174 Function calls: 39
+Step 80	 f(x)=0.6052715535989963 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 81	 f(x)=0.6052715536055213 Function calls: 68
+Step 82	 f(x)=0.6040912455919724 Function calls: 47
+Step 83	 f(x)=0.6037887368833947 Function calls: 45
+Step 84	 f(x)=0.6035496134735705 Function calls: 45
+Step 85	 f(x)=0.602548758984683 Function calls: 43
+Step 86	 f(x)=0.60201848739119 Function calls: 43
+Step 87	 f(x)=0.6010901924329508 Function calls: 40
+Step 88	 f(x)=0.6000394442654713 Function calls: 40
+Step 89	 f(x)=0.5985788252841399 Function calls: 40
+Step 90	 f(x)=0.5981853487295758 Function calls: 39
+Step 91	 f(x)=0.5874452877463707 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 92	 f(x)=0.5874452877487718 Function calls: 68
+Step 93	 f(x)=0.584834405534481 Function calls: 45
+Step 94	 f(x)=0.582772006690073 Function calls: 44
+Step 95	 f(x)=0.5826769225886861 Function calls: 46
+Step 96	 f(x)=0.5826662938559306 Function calls: 46
+Step 97	 f(x)=0.5824896211138768 Function calls: 43
+Step 98	 f(x)=0.5803368054033058 Function calls: 40
+Step 99	 f(x)=0.5798119790921763 Function calls: 39
+Step 100	 f(x)=0.5619242643205465 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 101	 f(x)=0.5619242643248824 Function calls: 68
+Step 102	 f(x)=0.5614568243337855 Function calls: 49
+Step 103	 f(x)=0.561382418769477 Function calls: 45
+Step 104	 f(x)=0.5610081299008896 Function calls: 46
+Step 105	 f(x)=0.5609186240186502 Function calls: 46
+Step 106	 f(x)=0.5605687096878946 Function calls: 42
+Step 107	 f(x)=0.5594007236639409 Function calls: 40
+Step 108	 f(x)=0.5546945201861075 Function calls: 39
+Step 109	 f(x)=0.5546390060164164 Function calls: 38
+Step 110	 f(x)=0.5497161810822389 Function calls: 38
+Step 111	 f(x)=0.5435285718377658 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 112	 f(x)=0.5435285718395453 Function calls: 68
+Step 113	 f(x)=0.5430031499451748 Function calls: 46
+Step 114	 f(x)=0.5427891760069811 Function calls: 45
+Step 115	 f(x)=0.5427613057175226 Function calls: 44
+Step 116	 f(x)=0.5421315456248234 Function calls: 43
+Step 117	 f(x)=0.5414004176017222 Function calls: 40
+Step 118	 f(x)=0.5408329909351518 Function calls: 42
+Step 119	 f(x)=0.5382694954540505 Function calls: 39
+Step 120	 f(x)=0.538181364878927 Function calls: 42
+Step 121	 f(x)=0.5351326720461884 Function calls: 38
+Step 122	 f(x)=0.5278169329421507 Function calls: 37
+Step 123	 f(x)=0.5271009323116638 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 124	 f(x)=0.5271009323595699 Function calls: 68
+Step 125	 f(x)=0.526038373008425 Function calls: 46
+Step 126	 f(x)=0.5258558170135602 Function calls: 45
+Step 127	 f(x)=0.524994376340155 Function calls: 44
+ALGORITHM FAILED: too many steps
+Finished in 5720 calls
+Got optimized symmetric potential in 128 steps (18 minutes) with 0.5245653640597731
 
-Step 68	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
+potential:
+-0.02466460927575808
+-0.07873700952893292
+-0.04193897932225518
+-0.08150109526628607
+-0.1545505894799254
+0.04742389983957351
+-0.08254757728833266
+0.9180627768585272
+0.94867492485696
+-0.2699805512449067
+0.07357264805416086
+-0.2070041072664401
+-0.04798288397377187
+0.9455393029928242
+-0.2235014944681109
+0.2752132843649963
+-0.397274178523352
+-0.1798700096617578
+-0.08654267335827319
+-0.2629673076406059
+0.2645186992950996
+-0.346306406410213
+1.304590197522917
+-0.07374417930612849
+-0.159628897731763
+0.07436050357228892
+-0.3810409684326583
+1.310430491019418
+-0.8537620189707765
+0.8443522766263732
+0.04618570859891026
+-0.2035910839049274
+-0.2108449232097541
+-0.0735940813801266
+0.8369652415450929
+0.3302622825489667
 
-Step 69	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 70	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 71	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 72	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 73	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 74	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 75	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 76	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 77	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 78	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 79	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 80	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
-Error happened (matrix could not be diagonalized), redoing hessian and adding random offset
-RESET B AS ERROR WAS RAISED
- x =    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
- ->    0.2873
-  -0.1682
-   0.1297
-   0.3187
-   0.0797
-   0.2270
-  -0.1601
-   0.8514
-   0.4981
-  -0.2053
-   0.2617
-   0.0656
-   0.1491
-   0.6080
-   0.1178
-   0.5024
-  -0.1879
-   0.2213
-
-Step 81	 f(x)=0.1162276257342841 Function calls: 1
-DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE
-DO 0 AT -172399577.916985
