@@ -1,0 +1,318 @@
+Measuring time of get fitness function, by running it 50 times 
+Got 628.113 ms per iteration 
+Fitness with unoptimized potential V0.tsv : 1.33339
+Start f(x)=1.333392283387752
+Step 0	 f(x)=1.281668529514461 Function calls: 78
+Step 1	 f(x)=1.095560557469832 Function calls: 37
+Step 2	 f(x)=0.8227195861559767 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 3	 f(x)=0.8227195864148114 Function calls: 68
+Step 4	 f(x)=0.8091905148920482 Function calls: 39
+Step 5	 f(x)=0.7677109299912089 Function calls: 38
+Step 6	 f(x)=0.7624621005495633 Function calls: 39
+Step 7	 f(x)=0.7301287344120833 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 8	 f(x)=0.7301287344289601 Function calls: 68
+Step 9	 f(x)=0.7266939452040969 Function calls: 41
+Step 10	 f(x)=0.7234143513261398 Function calls: 40
+Step 11	 f(x)=0.7182609857955001 Function calls: 39
+Step 12	 f(x)=0.698895877650998 Function calls: 38
+Step 13	 f(x)=0.6589092197567012 Function calls: 38
+RESET B AS LINESEARCH FAILED
+Step 14	 f(x)=0.6589092197611874 Function calls: 68
+Step 15	 f(x)=0.6229033929163071 Function calls: 48
+Step 16	 f(x)=0.6193040840171354 Function calls: 47
+Step 17	 f(x)=0.6182980293195133 Function calls: 46
+Step 18	 f(x)=0.5918938336864257 Function calls: 41
+Step 19	 f(x)=0.5694475531068114 Function calls: 42
+Step 20	 f(x)=0.5490000540726071 Function calls: 39
+Step 21	 f(x)=0.5428718058568939 Function calls: 40
+Step 22	 f(x)=0.5277204859899408 Function calls: 40
+Step 23	 f(x)=0.5215603879277391 Function calls: 39
+Step 24	 f(x)=0.5160067283527426 Function calls: 38
+Step 25	 f(x)=0.4823474028683197 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 26	 f(x)=0.4823474028689544 Function calls: 68
+Step 27	 f(x)=0.4779378301828654 Function calls: 44
+Step 28	 f(x)=0.4731076397182792 Function calls: 44
+Step 29	 f(x)=0.4717264880787777 Function calls: 44
+Step 30	 f(x)=0.4693796253794122 Function calls: 43
+Step 31	 f(x)=0.4676783631877048 Function calls: 41
+Step 32	 f(x)=0.4633215405797334 Function calls: 41
+Step 33	 f(x)=0.453120412045937 Function calls: 39
+Step 34	 f(x)=0.439389998371082 Function calls: 38
+Step 35	 f(x)=0.3991132056426066 Function calls: 37
+Step 36	 f(x)=0.3814709730641387 Function calls: 37
+Step 37	 f(x)=0.3813896468397648 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 38	 f(x)=0.381389646921401 Function calls: 68
+Step 39	 f(x)=0.3802702585579339 Function calls: 47
+Step 40	 f(x)=0.3772781292921693 Function calls: 44
+Step 41	 f(x)=0.3746341332904604 Function calls: 44
+Step 42	 f(x)=0.3744676526991007 Function calls: 44
+Step 43	 f(x)=0.3658703471621891 Function calls: 41
+Step 44	 f(x)=0.3609742654971123 Function calls: 41
+Step 45	 f(x)=0.35075822431696 Function calls: 39
+Step 46	 f(x)=0.342387195601895 Function calls: 39
+Step 47	 f(x)=0.3133989632650339 Function calls: 37
+Step 48	 f(x)=0.2982647556907753 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 49	 f(x)=0.2982647556976813 Function calls: 68
+Step 50	 f(x)=0.294470207584035 Function calls: 45
+Step 51	 f(x)=0.2936332433595099 Function calls: 44
+Step 52	 f(x)=0.2891218896977281 Function calls: 43
+Step 53	 f(x)=0.2883463485663719 Function calls: 44
+Step 54	 f(x)=0.2762992013543437 Function calls: 40
+Step 55	 f(x)=0.274975025132836 Function calls: 40
+Step 56	 f(x)=0.2721627224606996 Function calls: 42
+Step 57	 f(x)=0.2516383659189534 Function calls: 39
+Step 58	 f(x)=0.2410993426707228 Function calls: 38
+Step 59	 f(x)=0.2366396138385751 Function calls: 38
+Step 60	 f(x)=0.2051351828931306 Function calls: 37
+Step 61	 f(x)=0.2015804165821833 Function calls: 37
+Step 62	 f(x)=0.2012102991684092 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 63	 f(x)=0.2012102991685272 Function calls: 68
+Step 64	 f(x)=0.1977343962137827 Function calls: 47
+Step 65	 f(x)=0.1935801220326004 Function calls: 46
+Step 66	 f(x)=0.1935333808024149 Function calls: 46
+Step 67	 f(x)=0.1926025306438698 Function calls: 45
+Step 68	 f(x)=0.1912038214908574 Function calls: 43
+Step 69	 f(x)=0.1908459342770066 Function calls: 43
+Step 70	 f(x)=0.1896281603126544 Function calls: 42
+Step 71	 f(x)=0.1880274524599487 Function calls: 41
+Step 72	 f(x)=0.1860170178799218 Function calls: 40
+Step 73	 f(x)=0.1792888226773756 Function calls: 38
+Step 74	 f(x)=0.1706807522697507 Function calls: 38
+Step 75	 f(x)=0.1657953565141717 Function calls: 38
+Step 76	 f(x)=0.159763647080519 Function calls: 37
+Step 77	 f(x)=0.1574620816263566 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 78	 f(x)=0.1574620816268684 Function calls: 68
+Step 79	 f(x)=0.1551982095906345 Function calls: 49
+Step 80	 f(x)=0.150744834772821 Function calls: 46
+Step 81	 f(x)=0.1500755518378192 Function calls: 47
+Step 82	 f(x)=0.1498913901362347 Function calls: 48
+Step 83	 f(x)=0.1498119413103034 Function calls: 48
+Step 84	 f(x)=0.1496732178411028 Function calls: 45
+Step 85	 f(x)=0.1492744783373161 Function calls: 43
+Step 86	 f(x)=0.1481894992176663 Function calls: 43
+Step 87	 f(x)=0.1477767648071609 Function calls: 41
+Step 88	 f(x)=0.1449600785089108 Function calls: 40
+Step 89	 f(x)=0.1437163102350312 Function calls: 39
+Step 90	 f(x)=0.1406698571289278 Function calls: 40
+Step 91	 f(x)=0.1388539023342463 Function calls: 40
+Step 92	 f(x)=0.1371039161126247 Function calls: 40
+Step 93	 f(x)=0.132559340601642 Function calls: 38
+Step 94	 f(x)=0.1324217435302391 Function calls: 39
+Step 95	 f(x)=0.1304172076438352 Function calls: 37
+Step 96	 f(x)=0.1221019047053852 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 97	 f(x)=0.1221019047081337 Function calls: 68
+Step 98	 f(x)=0.1218653216495445 Function calls: 50
+Step 99	 f(x)=0.1217748629061914 Function calls: 50
+Step 100	 f(x)=0.1202668157225545 Function calls: 47
+Step 101	 f(x)=0.1197382529776976 Function calls: 47
+Step 102	 f(x)=0.1196013669529451 Function calls: 47
+Step 103	 f(x)=0.1195650030552729 Function calls: 46
+Step 104	 f(x)=0.1194124029822532 Function calls: 45
+Step 105	 f(x)=0.1190378670380174 Function calls: 43
+Step 106	 f(x)=0.1177694354540457 Function calls: 43
+Step 107	 f(x)=0.1177078036905564 Function calls: 46
+Step 108	 f(x)=0.1176398170025132 Function calls: 43
+Step 109	 f(x)=0.117260993118927 Function calls: 41
+Step 110	 f(x)=0.1166001854955364 Function calls: 41
+Step 111	 f(x)=0.1156556891773791 Function calls: 39
+Step 112	 f(x)=0.1131287902786036 Function calls: 38
+Step 113	 f(x)=0.1108366962155085 Function calls: 37
+Step 114	 f(x)=0.1086417344355713 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 115	 f(x)=0.1086417344364598 Function calls: 68
+Step 116	 f(x)=0.1083979132464209 Function calls: 52
+Step 117	 f(x)=0.1083978956793256 Function calls: 58
+Step 118	 f(x)=0.1083414825405304 Function calls: 48
+Step 119	 f(x)=0.1082917341055146 Function calls: 47
+Step 120	 f(x)=0.1080398608739853 Function calls: 46
+Step 121	 f(x)=0.1078547344205364 Function calls: 46
+Step 122	 f(x)=0.1077185916352166 Function calls: 46
+Step 123	 f(x)=0.1073275850257903 Function calls: 43
+Step 124	 f(x)=0.1071500962309652 Function calls: 45
+Step 125	 f(x)=0.1071045743460091 Function calls: 46
+Step 126	 f(x)=0.1070531235694232 Function calls: 44
+Step 127	 f(x)=0.1070285060060018 Function calls: 47
+Step 128	 f(x)=0.1069554097213313 Function calls: 43
+Step 129	 f(x)=0.1068373836601949 Function calls: 40
+Step 130	 f(x)=0.1061483342431519 Function calls: 40
+Step 131	 f(x)=0.1052508186452354 Function calls: 39
+Step 132	 f(x)=0.09985226422479612 Function calls: 37
+Step 133	 f(x)=0.09914009357412118 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 134	 f(x)=0.09914009357465908 Function calls: 68
+Step 135	 f(x)=0.09902000769830237 Function calls: 54
+Step 136	 f(x)=0.09892701388656325 Function calls: 52
+Step 137	 f(x)=0.09890194218784561 Function calls: 51
+Step 138	 f(x)=0.09868321212258943 Function calls: 47
+Step 139	 f(x)=0.09854610313687642 Function calls: 46
+Step 140	 f(x)=0.09851796874255231 Function calls: 46
+Step 141	 f(x)=0.09850080475186188 Function calls: 47
+Step 142	 f(x)=0.09846320150678778 Function calls: 46
+Step 143	 f(x)=0.09845888294307788 Function calls: 47
+Step 144	 f(x)=0.09841881585892681 Function calls: 44
+Step 145	 f(x)=0.09841334927641039 Function calls: 47
+Step 146	 f(x)=0.09836040942673251 Function calls: 43
+Step 147	 f(x)=0.09832106484628571 Function calls: 43
+Step 148	 f(x)=0.09725802808343882 Function calls: 40
+Step 149	 f(x)=0.09725695494914369 Function calls: 49
+Step 150	 f(x)=0.09723525331564561 Function calls: 39
+Step 151	 f(x)=0.09708934756914329 Function calls: 39
+Step 152	 f(x)=0.09614826831939506 Function calls: 37
+Step 153	 f(x)=0.09533288536237854 Function calls: 38
+Step 154	 f(x)=0.09462268749712269 Function calls: 37
+Step 155	 f(x)=0.09448185193008218 Function calls: 37
+Step 156	 f(x)=0.09339869237990125 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 157	 f(x)=0.09339869238050659 Function calls: 68
+Step 158	 f(x)=0.09339659991399751 Function calls: 56
+Step 159	 f(x)=0.09336554863163496 Function calls: 54
+Step 160	 f(x)=0.09320955984712552 Function calls: 49
+Step 161	 f(x)=0.09317302570314204 Function calls: 48
+Step 162	 f(x)=0.09316821047988033 Function calls: 48
+Step 163	 f(x)=0.09316372033821091 Function calls: 51
+Step 164	 f(x)=0.09314503425567584 Function calls: 45
+Step 165	 f(x)=0.09312998428876786 Function calls: 46
+Step 166	 f(x)=0.09311382304752285 Function calls: 46
+Step 167	 f(x)=0.09299953760622508 Function calls: 44
+Step 168	 f(x)=0.09294388213286617 Function calls: 45
+Step 169	 f(x)=0.09279798913092717 Function calls: 42
+Step 170	 f(x)=0.09279716779704293 Function calls: 47
+Step 171	 f(x)=0.09188738245032702 Function calls: 40
+Step 172	 f(x)=0.09179157253006351 Function calls: 41
+Step 173	 f(x)=0.09124885715536964 Function calls: 40
+Step 174	 f(x)=0.08974959736773319 Function calls: 38
+Step 175	 f(x)=0.08967301298608958 Function calls: 38
+Step 176	 f(x)=0.088046684240979 Function calls: 38
+Step 177	 f(x)=0.08751562955319424 Function calls: 38
+Step 178	 f(x)=0.08724738980073721 Function calls: 37
+Step 179	 f(x)=0.08706828287236804 Function calls: 37
+Step 180	 f(x)=0.08706828287164628 Function calls: 64
+RESET B AS LINESEARCH FAILED
+Step 181	 f(x)=0.08706828287348595 Function calls: 68
+Step 182	 f(x)=0.08599027307783406 Function calls: 55
+Step 183	 f(x)=0.08591186382643229 Function calls: 55
+Step 184	 f(x)=0.08587531610803563 Function calls: 52
+Step 185	 f(x)=0.08534244160968724 Function calls: 48
+Step 186	 f(x)=0.0851868146434165 Function calls: 49
+Step 187	 f(x)=0.08518039050914127 Function calls: 51
+Step 188	 f(x)=0.08508843633193484 Function calls: 48
+Step 189	 f(x)=0.08504682118836913 Function calls: 48
+Step 190	 f(x)=0.0850462675430039 Function calls: 49
+Step 191	 f(x)=0.08504186651066903 Function calls: 47
+Step 192	 f(x)=0.0849726001293671 Function calls: 45
+Step 193	 f(x)=0.08482742117929548 Function calls: 44
+Step 194	 f(x)=0.0848083154630942 Function calls: 45
+Step 195	 f(x)=0.08480076561601679 Function calls: 45
+Step 196	 f(x)=0.08472387871832082 Function calls: 43
+Step 197	 f(x)=0.08465821306587719 Function calls: 39
+Step 198	 f(x)=0.08440590095754674 Function calls: 39
+Step 199	 f(x)=0.08292231737481356 Function calls: 38
+Step 200	 f(x)=0.08275630569653766 Function calls: 38
+Step 201	 f(x)=0.08125237098478121 Function calls: 37
+Step 202	 f(x)=0.08022813804388747 Function calls: 37
+Step 203	 f(x)=0.08007711957035291 Function calls: 37
+Step 204	 f(x)=0.08007711956962366 Function calls: 67
+RESET B AS LINESEARCH FAILED
+Step 205	 f(x)=0.0800771195712725 Function calls: 68
+Step 206	 f(x)=0.08002706941491626 Function calls: 59
+Step 207	 f(x)=0.07982792933925938 Function calls: 56
+Step 208	 f(x)=0.07981216091167852 Function calls: 53
+Step 209	 f(x)=0.07971942944985648 Function calls: 50
+Step 210	 f(x)=0.07969815877239733 Function calls: 50
+Step 211	 f(x)=0.07969630593840638 Function calls: 51
+Step 212	 f(x)=0.07966006337756494 Function calls: 48
+Step 213	 f(x)=0.0796583217580039 Function calls: 49
+Step 214	 f(x)=0.0796573101220269 Function calls: 51
+Step 215	 f(x)=0.07965497834059053 Function calls: 45
+Step 216	 f(x)=0.07960915483168325 Function calls: 44
+Step 217	 f(x)=0.07954486090913605 Function calls: 44
+Step 218	 f(x)=0.07953289843165294 Function calls: 46
+Step 219	 f(x)=0.07951070124315743 Function calls: 44
+Step 220	 f(x)=0.07948960429815849 Function calls: 42
+Step 221	 f(x)=0.0793775709841802 Function calls: 42
+Step 222	 f(x)=0.07935166211777382 Function calls: 41
+Step 223	 f(x)=0.07928545650603913 Function calls: 42
+Step 224	 f(x)=0.07877653597136661 Function calls: 40
+Step 225	 f(x)=0.07876911285218396 Function calls: 41
+Step 226	 f(x)=0.0780397106197324 Function calls: 38
+Step 227	 f(x)=0.07733083621242832 Function calls: 38
+Step 228	 f(x)=0.07731064502737975 Function calls: 40
+Step 229	 f(x)=0.07729892328291403 Function calls: 39
+Step 230	 f(x)=0.07642634232910778 Function calls: 38
+Step 231	 f(x)=0.07636965412804241 Function calls: 39
+Step 232	 f(x)=0.07597076023210086 Function calls: 37
+Step 233	 f(x)=0.07563169772820759 Function calls: 37
+RESET B AS LINESEARCH FAILED
+Step 234	 f(x)=0.07563169772871288 Function calls: 68
+Step 235	 f(x)=0.07560298009897468 Function calls: 58
+Step 236	 f(x)=0.07558527267048756 Function calls: 58
+Step 237	 f(x)=0.07558313719452867 Function calls: 60
+Step 238	 f(x)=0.07552277239974024 Function calls: 51
+Step 239	 f(x)=0.0755197862653588 Function calls: 55
+Step 240	 f(x)=0.07551927216336832 Function calls: 57
+Step 241	 f(x)=0.07551703543601056 Function calls: 51
+Step 242	 f(x)=0.07550507567372459 Function calls: 47
+Step 243	 f(x)=0.0754988957552911 Function calls: 49
+Step 244	 f(x)=0.075498566784966 Function calls: 51
+Step 245	 f(x)=0.07549831169258844 Function calls: 51
+Step 246	 f(x)=0.07548853195269764 Function calls: 46
+Step 247	 f(x)=0.07548590829448258 Function calls: 47
+Step 248	 f(x)=0.07541176479105001 Function calls: 43
+Step 249	 f(x)=0.07538656240681069 Function calls: 45
+Step 250	 f(x)=0.07537487351625971 Function calls: 44
+RESET B AS LINESEARCH FAILED
+Step 251	 f(x)=0.07537487351976957 Function calls: 68
+Step 252	 f(x)=0.07534784950582207 Function calls: 64
+Step 253	 f(x)=0.07533779416394371 Function calls: 55
+Step 254	 f(x)=0.07532602915637474 Function calls: 57
+Step 255	 f(x)=0.07523228789273063 Function calls: 53
+ALGORITHM FAILED: too many steps
+Finished in 11654 calls
+Got optimized potential in 256 (36 minutes) with 0.07520030020330593
+
+potential:
+0.4593604052935628
+-0.2649252801445854
+0.08101064489617857
+0.322301132796887
+-0.03681714189131035
+0.2733205438055339
+-0.1702871348378762
+0.8436134429723458
+0.6347203935240742
+-0.21439434599544
+0.2926779460194309
+-0.04373373222845625
+0.1157326254685354
+0.5170247371384372
+0.1028173991356007
+0.4505405685773587
+-0.2194319728082176
+0.3221171421612896
+0.2101028416935003
+-0.1753162058231666
+0.4677732399328911
+0.1023685080776632
+0.6812748392941934
+0.04804609556019093
+0.008469365474558998
+0.2565466597929137
+-0.1792645520245079
+0.5068267995187163
+0.8317504660241627
+-0.2429294894621679
+0.1910790664012869
+-0.00174877180380449
+0.2299435445109417
+0.0974508961178218
+-0.151266753310268
+0.4693086911224921
+

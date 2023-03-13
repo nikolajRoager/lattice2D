@@ -18,7 +18,7 @@ bool approx(double a, double b,double tau, double epsilon)
 
     if (abs(a-b)<=tau)
         return true;
-    else if (abs(a-b)/(abs(a)+abs(b))<=epsilon)//No risk of divide by 0, if the user asks for a=b=0, then the above always returns true (unless some idiot asks for a negative tolerance and then asks if 0=0)
+    else if (abs(a-b)/(abs(a)+abs(b))<=epsilon)
         return true;
     else
         return false;

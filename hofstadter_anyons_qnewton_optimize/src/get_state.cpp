@@ -156,8 +156,8 @@ vec& V)
 
 
     //Somewhere to put the eigenvalues and vectors
-    cx_vec eigval;
-    cx_mat eigvec;
+    cx_vec eigval(1);
+    cx_mat eigvec(N_states,1);
 
     //Here we get N_states eigenstates, we will only want to print the 3 lowest, so sort them in ascending order
     //eigs_gen = [eig]envalues of [s]parse [gen]eral (i.e. need not be real) matrix
@@ -168,9 +168,13 @@ vec& V)
 
     stupid_lock.unlock();
 
+
+    if (eigval.size()==0)
+    {
+        throw std::runtime_error("decomposition failed, if at all possible try again literally anywhere else");
+    }
     this_eigval=eigval[0].real();
     this_eigvec = eigvec.col(0);
-
     //I don't know if the armadillo library guarantees that the eigenvectors are normalized, the documentation doesn't say so explicitly, as far as I can tell it always is, but I am not sure
     this_eigvec = normalise(this_eigvec );
 

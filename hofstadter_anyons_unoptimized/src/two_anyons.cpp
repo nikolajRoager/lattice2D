@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
     int y1 = atoi(argv[6]);
 
 
-    uint64_t N_particles = 3;
+    uint64_t N_particles = 4;
 
     if (nw==0)
     {

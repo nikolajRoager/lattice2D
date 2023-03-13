@@ -64,6 +64,11 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    if (N_sites %2 != 0 )
+    {
+        cout <<"Need even number of sites"<<endl;
+        return 1;
+    }
 
     if (0 > N_particles)
     {
@@ -145,7 +150,8 @@ int main(int argc, char* argv[])
     //But first. Set up all the variables we would like to save, and need to use
 
     //Traping potentials AND auxillary potential on all other sites put together
-    vec V(N_sites);
+    uint64_t half_N_sites=N_sites/2;
+    vec V(half_N_sites);
 
 
     ifstream potential_file(argv[4]);
@@ -156,7 +162,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    for (uint64_t i = 0; i < N_sites; ++i)
+    for (uint64_t i = 0; i < half_N_sites; ++i)
     {
         if (! (potential_file>>V[i]))
         {
@@ -173,10 +179,16 @@ int main(int argc, char* argv[])
     //The actual density difference we found
     vec q(N_sites);
 
-    //I will use a lambda function, to make getting the fitness, densities and charge difference easier, though C++ allows me to modify the captures I NEVER DO THAT IN A PROJECT WHERE I ALSO USE MULTITHREADING, FOR OBVIOUS REASONS, the things actually written to are all given as arguments
-    auto get_fitness =[&lattice_dens0,&anyon_sites,N_states1, &states1,N_sites,N_particles,nw,nh](vec V, vec& lattice_dens1, vec& q) -> double
-    {
 
+    //I will use a lambda function, to make getting the fitness, densities and charge difference easier, though C++ allows me to modify the captures I NEVER DO THAT IN A PROJECT WHERE I ALSO USE MULTITHREADING, FOR OBVIOUS REASONS, the things actually written to are all given as arguments
+    auto get_fitness =[&lattice_dens0,&anyon_sites,N_states1, &states1,N_sites,half_N_sites,N_particles,nw,nh](vec _V, vec& lattice_dens1, vec& q) -> double
+    {
+        vec V(N_sites);
+        for (uint64_t i = 0; i < half_N_sites; ++i)
+        {
+            V(i) = _V(i);
+            V(N_sites-i-1)=_V(i);
+        }
 
         double a2_eigval;
         cx_vec a2_eigvec;
@@ -228,20 +240,30 @@ int main(int argc, char* argv[])
         }
 
         fitness+=std::abs(anyon0_charge-0.5)+std::abs(anyon1_charge-0.5);
+
+
+
         return fitness;
     };
 
 
 
+    cout<<"Measuring time of get fitness function, by running it 50 times "<<endl;
+    double time=0;
+    double fitness;
     auto t1 = std::chrono::high_resolution_clock::now();
-    double fitness = get_fitness (V,lattice_dens1,q);
+    for (uint64_t i = 0; i < 50; ++i)
+    {
+        fitness = get_fitness (V,lattice_dens1,q);
+
+    }
     auto t2 = std::chrono::high_resolution_clock::now();
 
     /* Getting number of milliseconds as a double. */
     std::chrono::duration<double, std::milli> ms_double = t2 - t1;
+    time += ms_double.count();
 
-    std::cout << ms_double.count() << "ms\n";
-
+    cout<<"Got "<<time/50<<" ms per iteration "<<endl;
 
     print_density_data(q , nw, nh);
     cerr << endl;
@@ -251,6 +273,10 @@ int main(int argc, char* argv[])
 
     size_t steps;
     cout<<std::setprecision(16);
+
+    auto t_opt_start = std::chrono::high_resolution_clock::now();
+
+
     vec V_optimized = qnewton([&get_fitness](vec V)
     {
         //Don't output these things, but create them locally so that we don't run into problems with multithreading
@@ -259,7 +285,17 @@ int main(int argc, char* argv[])
         return get_fitness(V,lattice_dens1,q);
     },V,steps,1e-5,true);
 
-    cout<<"Got optimized potential in "<<steps<<" with "<<get_fitness(V_optimized,lattice_dens1,q)<<endl;
+    auto t_opt_end = std::chrono::high_resolution_clock::now();
+    std::chrono::minutes duration = std::chrono::duration_cast<std::chrono::minutes>(t_opt_end - t_opt_start);
+    cout<<"Got optimized potential in "<<steps<<" ("<<duration.count()<<" minutes) with "<<get_fitness(V_optimized,lattice_dens1,q)<<endl;
+
+    vec V_opt(N_sites);
+    for (uint64_t i = 0; i < half_N_sites; ++i)
+    {
+        V_opt(i) = V_optimized(i);
+        V_opt(N_sites-i-1)=V_optimized(i);
+    }
+
 
     //q is written to as soon as we call get_fitness
     print_density_data(q , nw, nh);
@@ -270,7 +306,9 @@ int main(int argc, char* argv[])
     cerr << endl;
 
     cout<<endl<<"potential:"<<endl;
-
-    cout<<V_optimized<<endl;
+    cout<<setprecision(16);
+    for (double Vi : V_optimized)
+        cout<<Vi<<'\n';
+    cout<<endl;
     return 0;
 }

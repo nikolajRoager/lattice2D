@@ -60,6 +60,6 @@ $(ODIR)/test_minimize.o: $(SRCDIR)/test_minimize.cpp $(IDIR)/minimize.hpp
 clean:
 ;rm -f $(ODIR)/*.o
 ;rm -f $(OUTDIR)/*.exe
-;rm -f log*
+;rm -f log.txt
 ;rm -f q*.tsv
 ;rm -f  *.pdf

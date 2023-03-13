@@ -25,6 +25,7 @@ $(ODIR)/test_minimize.o: $(SRCDIR)/test_minimize.cpp $(IDIR)/minimize.hpp
 ;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
 
 
+
 $(ODIR)/minimize.o: $(SRCDIR)/minimize.cpp $(IDIR)/minimize.hpp
 ;$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
 

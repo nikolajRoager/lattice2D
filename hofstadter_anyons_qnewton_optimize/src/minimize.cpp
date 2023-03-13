@@ -26,7 +26,7 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
         max_threads=1;
     }
     else
-        max_threads =4;
+        max_threads =1;
     uint64_t calls=0;
 
     auto func = [&F,&calls](vec V) -> double
@@ -49,13 +49,23 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
     bool redo=true;//I have an emergency redo function, in case deltax is too small, in some rare cases, I have seen deltax be treated as a 0, breaking the algorithm uppon division, if that happen, we will retry here
     int max_steps=256;//should never need that much
 
-        uint64_t total_calls =1;//We will start with one call, before starting optimization
+    uint64_t total_calls =1;//We will start with one call, before starting optimization
+
+    vec best_x = x;
+    double best_fx=-1;
+    double fx =-1;
     while (redo)
     {
         redo=false;//In 99% of cases, this will only need to be done once, but maybe we are on a computer where machine epsilon is smaller than expected.
 
         step = -1;
-        double fx=func(x);
+        fx=func(x);
+        if (best_fx==-1)
+        {
+            //Sometimes we end up going UP the hill, save the best we ever found
+            best_fx=fx;
+            best_x=x;
+        }
         mat B = mat(n,n,fill::eye);//Inverse hessian, start guess: identity
 
         //We will save the gradient between steps, as we need the gradient both at the start and at the end
@@ -68,6 +78,7 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
             cout<<"Start f(x)="<<fx<<endl;
         }
 
+        bool haha = false;
 
         do
         {//Each step
@@ -125,6 +136,11 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                     }
                 }
 
+
+
+            try
+            {
+
             if (!redo)//If finding the gradient worked
             {
                 if (verbose)
@@ -150,8 +166,14 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
 
                 double fx_new = fx;
 
+                if (haha)
+                    cout<<"DO IS CALL FUNCTION YES DO AFTER ERROR RAISED BE"<<endl;
+
                 for (int i = 0; i < 32; ++i)
                 {
+
+                    if (haha)
+                        cout<<"DO "<<i<<" AT "<<x_new[0]<<endl;
                     // Perform backtracking lambda -> lambda/2 and update s until f(x+s)<f(x)+alpha dot(s,∇ f(x)) (or until lambda too small)
                     fx_new=func(x_new);//Hopefully we won't calls this 32 times
                     if (fx_new < fx+ alpha*dot(S,GradFx)  )
@@ -159,6 +181,7 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                         linesearch_fail =false;
                         break;
                     }
+
                     lambda*=0.5;
                     S = lambda*Dx;
                     x_new = x+S;
@@ -167,6 +190,12 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                 x = x_new;
                 fx=fx_new;
 
+                if (fx<best_fx || best_fx==-1)
+                {
+                    //Sometimes we end up going UP the hill, save the best we ever found
+                    best_fx=fx;
+                    best_x=x;
+                }
 
                 //With enough steps, this will actually work without resetting B. But we can do better now entering SR1 update
 
@@ -310,6 +339,28 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
                     cout<<"BREAK DUE TO: gradient reached target"<<endl;
                 break;
             }
+            if (fx<acc)
+            {
+                if (verbose)
+                    cout<<"BREAK DUE TO: close enough to 0"<<endl;
+                break;
+            }
+
+            }
+            catch(...)//Crap, lets just hope this does not happen again
+            {
+                cout<<"Error happened (matrix could not be diagonalized), redoing hessian and adding random offset"<<endl;
+
+                B = mat(n,n,fill::eye);
+                if (verbose)
+                {
+                    cout<<"RESET B AS ERROR WAS RAISED"<<endl;
+                    cout<<" x = "<<x<<" -> "<<best_x<<endl;
+                    x=best_x;
+                    haha =true;
+                    //redo =true;
+                }
+            }
 
             if (step>=max_steps)//I am not sure how you would have > max steps ... ok actually you can, if we redo at the second to last step
             {
@@ -334,8 +385,12 @@ vec qnewton( function<double(vec)> F, vec x0, size_t& step, double acc, bool ver
     if (verbose)
     {
         cout<<"Finished in "<<total_calls<<" calls"<<endl;
+        if (best_fx!=fx)
+            cout<<"The final step ("<<fx<<") is worse than the best ever step ("<<best_fx<<"), returning to the best ever step"<<endl;
     }
-    return x;
+
+
+    return best_x;
 }
 
 

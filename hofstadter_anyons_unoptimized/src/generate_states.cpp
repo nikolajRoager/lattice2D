@@ -307,7 +307,6 @@ mat get_density(const vector<state_t>& states,vector<double> superpositions , co
         i+=w;
     }
 
-    cout<<end;
 
     return Out;
 }
